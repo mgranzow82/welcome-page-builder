@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoImg from "@/assets/logo-daai.png";
+import Logo from "@/components/Logo";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-16 py-5">
       <Link to="/" className="shrink-0">
-        <img src={logoImg} alt="DA·AI" className="h-10" />
+        <Logo variant="light" className="h-8" />
       </Link>
 
       {/* Desktop nav */}
