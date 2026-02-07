@@ -16,7 +16,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-hero/90 via-hero/70 to-hero/40" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-16 pt-24 pb-16">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-16 pt-24 pb-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <motion.h1
