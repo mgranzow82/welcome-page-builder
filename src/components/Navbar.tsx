@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-16 py-5">
       <Link to="/" className="shrink-0">
-        <Logo variant="light" className="h-12" />
+        <Logo variant="light" className="h-14" />
       </Link>
 
       {/* Desktop nav */}
