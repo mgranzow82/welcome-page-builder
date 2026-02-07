@@ -23,7 +23,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="font-display text-4xl lg:text-5xl leading-tight text-hero-foreground mb-4"
+              className="font-display text-4xl lg:text-5xl leading-[1.2] tracking-wide text-hero-foreground mb-5"
             >
               Digital Architecture<br />& AI Consulting
             </motion.h1>
@@ -31,7 +31,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="text-hero-muted text-lg mb-6"
+              className="text-hero-muted text-lg leading-snug mb-6"
             >
               Enterprise & Solution Architecture<br />for DACH & UAE
             </motion.p>
