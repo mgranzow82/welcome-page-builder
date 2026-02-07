@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Mail, MapPin, Linkedin, Send } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import Logo from "@/components/Logo";
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [searchParams] = useSearchParams();
+  const initialSubject = searchParams.get("subject") || "";
+  const [form, setForm] = useState({ name: "", email: "", subject: initialSubject, message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -161,6 +163,21 @@ const Contact = () => {
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     className="w-full rounded-md border border-border bg-card px-4 py-2.5 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
                     placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1.5">
+                    Subject
+                  </label>
+                  <input
+                    id="subject"
+                    type="text"
+                    required
+                    maxLength={200}
+                    value={form.subject}
+                    onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                    className="w-full rounded-md border border-border bg-card px-4 py-2.5 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
+                    placeholder="What is this about?"
                   />
                 </div>
                 <div>

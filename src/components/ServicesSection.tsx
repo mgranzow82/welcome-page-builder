@@ -45,7 +45,7 @@ const ServicesSection = () => {
               <h3 className="font-display text-lg text-card-foreground mb-2">{s.title}</h3>
               <div className="h-px w-8 bg-accent/40 mb-3" />
               <p className="text-muted-foreground text-sm flex-1 mb-6">{s.description}</p>
-              <a href="#" className="flex items-center gap-1 rounded bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
+              <a href={`/contact?subject=${encodeURIComponent(s.title)}`} className="flex items-center gap-1 rounded bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
                 {s.cta} <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </motion.div>
