@@ -3,37 +3,39 @@ interface LogoProps {
   className?: string;
 }
 
-const Logo = ({ variant = "light", className = "h-8" }: LogoProps) => {
+const Logo = ({ variant = "light", className = "h-10" }: LogoProps) => {
   const textColor = variant === "light" ? "#ffffff" : "#0c2340";
-  const dotColor = "#2a9d8f"; // teal accent
+  const dotColor = "#2a9d8f";
 
   return (
     <svg
-      viewBox="0 0 200 60"
+      viewBox="0 0 240 56"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* D */}
+      {/* DA */}
       <text
         x="0"
-        y="48"
+        y="44"
         fontFamily="Barlow, sans-serif"
         fontWeight="700"
-        fontSize="52"
+        fontSize="48"
+        letterSpacing="2"
         fill={textColor}
       >
         DA
       </text>
       {/* Dot */}
-      <circle cx="108" cy="32" r="5" fill={dotColor} />
+      <circle cx="118" cy="28" r="5" fill={dotColor} />
       {/* AI */}
       <text
-        x="120"
-        y="48"
+        x="134"
+        y="44"
         fontFamily="Barlow, sans-serif"
         fontWeight="700"
-        fontSize="52"
+        fontSize="48"
+        letterSpacing="2"
         fill={textColor}
       >
         AI
