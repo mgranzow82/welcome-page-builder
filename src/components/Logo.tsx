@@ -9,7 +9,7 @@ const Logo = ({ variant = "light", className = "h-10" }: LogoProps) => {
 
   return (
     <svg
-      viewBox="0 0 240 56"
+      viewBox="0 0 200 56"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -21,21 +21,19 @@ const Logo = ({ variant = "light", className = "h-10" }: LogoProps) => {
         fontFamily="Barlow, sans-serif"
         fontWeight="700"
         fontSize="48"
-        letterSpacing="2"
         fill={textColor}
       >
         DA
       </text>
       {/* Dot */}
-      <circle cx="105" cy="28" r="5" fill={dotColor} />
+      <circle cx="82" cy="28" r="5" fill={dotColor} />
       {/* AI */}
       <text
-        x="118"
+        x="95"
         y="44"
         fontFamily="Barlow, sans-serif"
         fontWeight="700"
         fontSize="48"
-        letterSpacing="2"
         fill={textColor}
       >
         AI
