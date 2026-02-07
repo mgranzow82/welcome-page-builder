@@ -248,7 +248,7 @@ const PackagesPage = () => {
                   ))}
                 </ul>
                 <a
-                  href="/#contact"
+                  href={`/contact?subject=${encodeURIComponent(t.name)}`}
                   className={`flex items-center justify-center gap-1 rounded px-4 py-2.5 text-sm font-semibold transition-opacity hover:opacity-90 ${
                     t.highlighted
                       ? "bg-accent text-accent-foreground"
@@ -293,7 +293,7 @@ const PackagesPage = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            href="/#contact"
+            href="/contact?subject=Kostenloses%20Gespräch%20buchen"
             className="inline-block rounded bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
           >
             Kostenloses Gespräch buchen

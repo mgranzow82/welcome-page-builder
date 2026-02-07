@@ -33,7 +33,7 @@ const CTASection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          href="#"
+          href="/contact?subject=Free%2030-Minute%20Consultation"
           className="inline-block rounded bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
         >
           Book a Free Call

@@ -65,7 +65,7 @@ const HeroSection = () => {
               <a href="#packages" className="rounded bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity">
                 Explore Packages
               </a>
-              <a href="#contact" className="rounded border border-hero-foreground/30 px-5 py-2.5 text-sm font-semibold text-hero-foreground hover:bg-hero-foreground/10 transition-colors">
+              <a href="/contact?subject=Talk%20to%20Principal%20Architect" className="rounded border border-hero-foreground/30 px-5 py-2.5 text-sm font-semibold text-hero-foreground hover:bg-hero-foreground/10 transition-colors">
                 Talk to Your Principal Architect
               </a>
             </motion.div>
