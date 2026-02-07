@@ -2,7 +2,7 @@ import { ArrowRight, Check, FileText, GitBranch, Map, Sparkles } from "lucide-re
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
-import logoImg from "@/assets/logo-daai.png";
+import Logo from "@/components/Logo";
 
 const features = [
   { icon: Map, title: "Target Architecture", description: "A clear, documented target state that bridges business ambitions and IT reality." },
@@ -64,7 +64,7 @@ const PackagesPage = () => {
       {/* Nav */}
       <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-16 py-5">
         <Link to="/" className="shrink-0">
-          <img src={logoImg} alt="DA·AI" className="h-10" />
+          <Logo variant="light" className="h-8" />
         </Link>
         <Link
           to="/"
