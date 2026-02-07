@@ -3,7 +3,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const CTASection = () => {
   return (
-    <section id="contact" className="relative py-20 px-6 lg:px-16 overflow-hidden">
+    <section id="contact" className="relative py-12 px-6 lg:px-16 overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-hero/85" />

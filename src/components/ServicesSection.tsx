@@ -10,7 +10,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 px-6 lg:px-16 bg-background">
+    <section id="services" className="py-12 px-6 lg:px-16 bg-background">
       <div className="mx-auto max-w-7xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-muted-foreground max-w-2xl mx-auto mb-14 text-lg"
+          className="text-muted-foreground max-w-2xl mx-auto mb-10 text-lg"
         >
           Get from "We know we must change" to a clear target, architecture and roadmap – fast, pragmatic, decision-ready.
         </motion.p>
