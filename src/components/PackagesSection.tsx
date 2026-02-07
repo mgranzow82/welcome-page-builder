@@ -1,9 +1,10 @@
 import { ArrowRight, Map, Search } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const packages = [
-  { icon: Map, title: "Target Architecture & Roadmap", description: "From a structured target architecture to an actionable roadmap", cta: "View Offering" },
-  { icon: Search, title: "Digital & AI Clarity Check", description: "Get an honest status, clear overview, and concrete next steps in days", cta: "View Offering" },
+  { icon: Map, title: "Target Architecture & Roadmap", description: "From a structured target architecture to an actionable roadmap", cta: "View Offering", href: "/packages" },
+  { icon: Search, title: "Digital & AI Clarity Check", description: "Get an honest status, clear overview, and concrete next steps in days", cta: "View Offering", href: "/packages" },
 ];
 
 const PackagesSection = () => {
@@ -42,9 +43,9 @@ const PackagesSection = () => {
               <div className="flex-1">
                 <h3 className="font-display text-xl text-accent mb-2">{p.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{p.description}</p>
-                <a href="#" className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline">
+                <Link to={p.href} className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline">
                   {p.cta} <ArrowRight className="h-3.5 w-3.5" />
-                </a>
+                </Link>
               </div>
               <p.icon className="h-14 w-14 text-accent/40 shrink-0" strokeWidth={1} />
             </motion.div>
