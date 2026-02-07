@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const navItems = ["Services", "Packages", "About", "Contact"];
+const navItems = [
+  { label: "Services", href: "#services" },
+  { label: "Packages", href: "/packages" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
 
 const Navbar = () => {
   const [langOpen, setLangOpen] = useState(false);
@@ -15,15 +21,25 @@ const Navbar = () => {
 
       {/* Desktop nav */}
       <div className="hidden md:flex items-center gap-8">
-        {navItems.map((item) => (
-          <a
-            key={item}
-            href={`#${item.toLowerCase()}`}
-            className="text-hero-foreground/80 hover:text-hero-foreground text-sm font-medium transition-colors"
-          >
-            {item}
-          </a>
-        ))}
+        {navItems.map((item) =>
+          item.href.startsWith("/") ? (
+            <Link
+              key={item.label}
+              to={item.href}
+              className="text-hero-foreground/80 hover:text-hero-foreground text-sm font-medium transition-colors"
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <a
+              key={item.label}
+              href={item.href}
+              className="text-hero-foreground/80 hover:text-hero-foreground text-sm font-medium transition-colors"
+            >
+              {item.label}
+            </a>
+          )
+        )}
 
         <div className="relative">
           <button
@@ -66,16 +82,27 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="absolute top-full left-0 right-0 bg-hero p-6 md:hidden flex flex-col gap-4">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-hero-foreground/80 hover:text-hero-foreground text-sm font-medium"
-              onClick={() => setMobileOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.href.startsWith("/") ? (
+              <Link
+                key={item.label}
+                to={item.href}
+                className="text-hero-foreground/80 hover:text-hero-foreground text-sm font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-hero-foreground/80 hover:text-hero-foreground text-sm font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </div>
       )}
     </nav>
