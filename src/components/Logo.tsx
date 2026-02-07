@@ -27,10 +27,10 @@ const Logo = ({ variant = "light", className = "h-10" }: LogoProps) => {
         DA
       </text>
       {/* Dot */}
-      <circle cx="118" cy="28" r="5" fill={dotColor} />
+      <circle cx="105" cy="28" r="5" fill={dotColor} />
       {/* AI */}
       <text
-        x="134"
+        x="118"
         y="44"
         fontFamily="Barlow, sans-serif"
         fontWeight="700"
