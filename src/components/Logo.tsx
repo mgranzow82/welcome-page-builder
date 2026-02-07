@@ -34,7 +34,7 @@ const Logo = ({ variant = "light", className = "h-10" }: LogoProps) => {
         fontFamily="Barlow, sans-serif"
         fontWeight="700"
         fontSize="48"
-        fill={textColor}
+        fill={dotColor}
       >
         AI
       </text>
