@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { blogPosts } from "@/data/blogPosts";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Blog = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -18,7 +21,7 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-4xl lg:text-5xl mb-4"
           >
-            Insights &amp; Perspectives
+            {t("blog.title")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -26,7 +29,7 @@ const Blog = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-hero-muted text-lg max-w-2xl mx-auto"
           >
-            Praktisches Denken über Architektur, AI und digitale Transformation.
+            {t("blog.page_subtitle")}
           </motion.p>
         </div>
       </section>
@@ -48,10 +51,10 @@ const Blog = () => {
                   {post.tag}
                 </span>
                 <h2 className="font-display text-lg text-card-foreground mb-2 group-hover:text-accent transition-colors">
-                  {post.title}
+                  {t(post.titleKey)}
                 </h2>
                 <p className="text-muted-foreground text-sm flex-1 mb-4 leading-relaxed">
-                  {post.excerpt}
+                  {t(post.excerptKey)}
                 </p>
                 <div className="flex items-center justify-between mt-auto">
                   <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -62,7 +65,7 @@ const Blog = () => {
                     to={`/blog/${post.slug}`}
                     className="flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
                   >
-                    Lesen <ArrowRight className="h-3.5 w-3.5" />
+                    {t("blog.read")} <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>

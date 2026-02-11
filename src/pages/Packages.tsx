@@ -2,77 +2,51 @@ import { ArrowRight, Check, FileText, GitBranch, Map, Sparkles } from "lucide-re
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
-import Logo from "@/components/Logo";
-
-const features = [
-  { icon: Map, title: "Target Architecture", description: "A clear, documented target state that bridges business ambitions and IT reality." },
-  { icon: FileText, title: "Documented Decisions", description: "Every architectural decision recorded, reasoned, and traceable — no guesswork." },
-  { icon: GitBranch, title: "Actionable Roadmap", description: "A prioritised, phased plan that turns the target into manageable delivery steps." },
-  { icon: Sparkles, title: "Pragmatic AI", description: "AI opportunities identified and assessed for real impact, not hype." },
-];
-
-const tiers = [
-  {
-    size: "S",
-    name: "Clarity Sprint",
-    duration: "2–3 Weeks",
-    price: "ab €12.000",
-    audience: "Start-ups & KMU, die schnell Klarheit brauchen",
-    scope: [
-      "Stakeholder-Interviews (bis 5)",
-      "Ist-Analyse & Pain-Point-Mapping",
-      "Target Architecture (Übersicht)",
-      "Executive Summary & Empfehlungen",
-    ],
-  },
-  {
-    size: "M",
-    name: "Architecture Project",
-    duration: "4–8 Weeks",
-    price: "ab €28.000",
-    audience: "Mittelstand & Enterprises mit laufender Transformation",
-    scope: [
-      "Alles aus S, plus:",
-      "Detaillierte Target Architecture",
-      "Entscheidungsregister (ADR)",
-      "Roadmap mit Phasen & Abhängigkeiten",
-      "AI-Opportunity Assessment",
-      "2 Review-Workshops",
-    ],
-    highlighted: true,
-  },
-  {
-    size: "L",
-    name: "Transformation Office",
-    duration: "3–6 Monate",
-    price: "ab €60.000",
-    audience: "Enterprises mit komplexen, multi-stream Programmen",
-    scope: [
-      "Alles aus M, plus:",
-      "Laufende Architektur-Governance",
-      "Integration & API Architecture",
-      "Capability Maps & Domain Model",
-      "Monatliche Steering-Workshops",
-      "Hands-on Sparring mit Delivery-Teams",
-    ],
-  },
-];
+import Navbar from "@/components/Navbar";
+import FooterSection from "@/components/FooterSection";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PackagesPage = () => {
+  const { t } = useLanguage();
+
+  const features = [
+    { icon: Map, title: t("pkg.feat1.title"), description: t("pkg.feat1.desc") },
+    { icon: FileText, title: t("pkg.feat2.title"), description: t("pkg.feat2.desc") },
+    { icon: GitBranch, title: t("pkg.feat3.title"), description: t("pkg.feat3.desc") },
+    { icon: Sparkles, title: t("pkg.feat4.title"), description: t("pkg.feat4.desc") },
+  ];
+
+  const tiers = [
+    {
+      size: "S",
+      name: t("pkg.s.name"),
+      duration: t("pkg.s.duration"),
+      price: t("pkg.s.price"),
+      audience: t("pkg.s.audience"),
+      scope: [t("pkg.s.i1"), t("pkg.s.i2"), t("pkg.s.i3"), t("pkg.s.i4")],
+    },
+    {
+      size: "M",
+      name: t("pkg.m.name"),
+      duration: t("pkg.m.duration"),
+      price: t("pkg.m.price"),
+      audience: t("pkg.m.audience"),
+      scope: [t("pkg.m.i1"), t("pkg.m.i2"), t("pkg.m.i3"), t("pkg.m.i4"), t("pkg.m.i5"), t("pkg.m.i6")],
+      highlighted: true,
+    },
+    {
+      size: "L",
+      name: t("pkg.l.name"),
+      duration: t("pkg.l.duration"),
+      price: t("pkg.l.price"),
+      audience: t("pkg.l.audience"),
+      scope: [t("pkg.l.i1"), t("pkg.l.i2"), t("pkg.l.i3"), t("pkg.l.i4"), t("pkg.l.i5"), t("pkg.l.i6")],
+    },
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Nav */}
-      <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-16 py-5">
-        <Link to="/" className="shrink-0">
-          <Logo variant="light" className="h-16" />
-        </Link>
-        <Link
-          to="/"
-          className="text-hero-foreground/80 hover:text-hero-foreground text-sm font-medium transition-colors"
-        >
-          ← Back to Home
-        </Link>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center overflow-hidden">
@@ -87,7 +61,7 @@ const PackagesPage = () => {
             transition={{ duration: 0.5 }}
             className="text-accent text-sm font-semibold uppercase tracking-widest mb-3"
           >
-            Packages
+            {t("pkg.label")}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
@@ -95,7 +69,7 @@ const PackagesPage = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-4xl lg:text-5xl text-hero-foreground mb-4"
           >
-            Target Architecture &amp; Roadmap
+            {t("pkg.hero.title")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -103,8 +77,7 @@ const PackagesPage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-hero-muted text-lg max-w-2xl mx-auto leading-relaxed"
           >
-            From "we know we must change" to a clear target state, documented decisions,
-            and a pragmatic roadmap — fast, structured, decision-ready.
+            {t("pkg.hero.subtitle")}
           </motion.p>
         </div>
       </section>
@@ -118,14 +91,9 @@ const PackagesPage = () => {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="font-display text-2xl text-foreground mb-4">Für wen?</h2>
+            <h2 className="font-display text-2xl text-foreground mb-4">{t("pkg.for_whom")}</h2>
             <ul className="space-y-3 text-muted-foreground text-sm">
-              {[
-                "Unternehmen vor oder mitten in einer digitalen Transformation",
-                "IT- und Business-Leiter, die Klarheit über den Zielzustand brauchen",
-                "Organisationen, die AI-Potenziale strukturiert bewerten möchten",
-                "Teams, die Architektur-Entscheidungen nachvollziehbar dokumentieren wollen",
-              ].map((item) => (
+              {[t("pkg.for_item1"), t("pkg.for_item2"), t("pkg.for_item3"), t("pkg.for_item4")].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
                   {item}
@@ -140,15 +108,9 @@ const PackagesPage = () => {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h2 className="font-display text-2xl text-foreground mb-4">Was ihr bekommt</h2>
+            <h2 className="font-display text-2xl text-foreground mb-4">{t("pkg.what_you_get")}</h2>
             <ul className="space-y-3 text-muted-foreground text-sm">
-              {[
-                "Eine dokumentierte Target Architecture, abgestimmt auf eure Geschäftsziele",
-                "Ein Architecture Decision Record (ADR) mit begründeten Entscheidungen",
-                "Eine priorisierte Roadmap mit Phasen, Abhängigkeiten und Quick-Wins",
-                "AI-Opportunity Assessment mit konkreten Einsatzfeldern",
-                "Executive Summary für Stakeholder und Steering Committees",
-              ].map((item) => (
+              {[t("pkg.get_item1"), t("pkg.get_item2"), t("pkg.get_item3"), t("pkg.get_item4"), t("pkg.get_item5")].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
                   {item}
@@ -169,7 +131,7 @@ const PackagesPage = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl text-foreground mb-10"
           >
-            Key Benefits
+            {t("pkg.benefits")}
           </motion.h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
@@ -200,7 +162,7 @@ const PackagesPage = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl text-foreground mb-4"
           >
-            Projektgrößen
+            {t("pkg.tiers_title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -209,54 +171,54 @@ const PackagesPage = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-muted-foreground max-w-2xl mx-auto mb-10 text-lg"
           >
-            Drei Pakete, ein Ziel: Architektur-Klarheit – skaliert auf eure Situation.
+            {t("pkg.tiers_subtitle")}
           </motion.p>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {tiers.map((t, i) => (
+            {tiers.map((tier, i) => (
               <motion.div
-                key={t.size}
+                key={tier.size}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
                 className={`relative flex flex-col rounded-lg border p-6 text-left shadow-sm transition-shadow hover:shadow-md ${
-                  t.highlighted
+                  tier.highlighted
                     ? "border-accent bg-accent/5 ring-1 ring-accent/30"
                     : "border-border bg-card"
                 }`}
               >
-                {t.highlighted && (
+                {tier.highlighted && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-0.5 text-xs font-semibold text-accent-foreground">
-                    Empfohlen
+                    {t("pkg.recommended")}
                   </span>
                 )}
                 <div className="flex items-baseline gap-2 mb-1">
-                  <span className="font-display text-3xl text-accent">{t.size}</span>
-                  <span className="font-display text-xl text-card-foreground">{t.name}</span>
+                  <span className="font-display text-3xl text-accent">{tier.size}</span>
+                  <span className="font-display text-xl text-card-foreground">{tier.name}</span>
                 </div>
-                <p className="text-sm text-muted-foreground mb-1">{t.duration}</p>
-                <p className="text-lg font-semibold text-foreground mb-4">{t.price}</p>
-                <p className="text-sm text-muted-foreground italic mb-4">{t.audience}</p>
+                <p className="text-sm text-muted-foreground mb-1">{tier.duration}</p>
+                <p className="text-lg font-semibold text-foreground mb-4">{tier.price}</p>
+                <p className="text-sm text-muted-foreground italic mb-4">{tier.audience}</p>
                 <div className="h-px bg-border mb-4" />
                 <ul className="space-y-2 flex-1 mb-6">
-                  {t.scope.map((item) => (
+                  {tier.scope.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="h-3.5 w-3.5 mt-0.5 text-accent shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="/book"
+                <Link
+                  to="/book"
                   className={`flex items-center justify-center gap-1 rounded px-4 py-2.5 text-sm font-semibold transition-opacity hover:opacity-90 ${
-                    t.highlighted
+                    tier.highlighted
                       ? "bg-accent text-accent-foreground"
                       : "bg-primary text-primary-foreground"
                   }`}
                 >
-                  Gespräch buchen <ArrowRight className="h-3.5 w-3.5" />
-                </a>
+                  {t("pkg.book_call")} <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -277,7 +239,7 @@ const PackagesPage = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl text-hero-foreground mb-4"
           >
-            Bereit für Architektur-Klarheit?
+            {t("pkg.bottom.title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -286,20 +248,22 @@ const PackagesPage = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-hero-muted text-lg mb-8"
           >
-            In einem kostenlosen 30-Minuten-Gespräch klären wir eure Ausgangslage und die passende Paketgröße.
+            {t("pkg.bottom.text")}
           </motion.p>
-          <motion.a
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            href="/book"
-            className="inline-block rounded bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
           >
-            Kostenloses Gespräch buchen
-          </motion.a>
+            <Link to="/book" className="inline-block rounded bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity">
+              {t("pkg.bottom.cta")}
+            </Link>
+          </motion.div>
         </div>
       </section>
+
+      <FooterSection />
     </div>
   );
 };

@@ -3,9 +3,12 @@ import { Mail, MapPin, Linkedin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link, useSearchParams } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
-import Logo from "@/components/Logo";
+import Navbar from "@/components/Navbar";
+import FooterSection from "@/components/FooterSection";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [searchParams] = useSearchParams();
   const initialSubject = searchParams.get("subject") || "";
   const [form, setForm] = useState({ name: "", email: "", subject: initialSubject, message: "" });
@@ -13,24 +16,12 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder – integrate with backend later
     setSubmitted(true);
   };
 
   return (
     <div className="min-h-screen">
-      {/* Nav */}
-      <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-16 py-5">
-        <Link to="/" className="shrink-0">
-          <Logo variant="light" className="h-16" />
-        </Link>
-        <Link
-          to="/"
-          className="text-hero-foreground/80 hover:text-hero-foreground text-sm font-medium transition-colors"
-        >
-          ← Back to Home
-        </Link>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center overflow-hidden">
@@ -45,7 +36,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="text-accent text-sm font-semibold uppercase tracking-widest mb-3"
           >
-            Contact
+            {t("contact.label")}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
@@ -53,7 +44,7 @@ const Contact = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-4xl lg:text-5xl text-hero-foreground mb-4"
           >
-            Let's Talk
+            {t("contact.hero.title")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -61,7 +52,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-hero-muted text-lg max-w-2xl mx-auto leading-relaxed"
           >
-            Whether you're planning a transformation or need architecture clarity — reach out and let's find the right path together.
+            {t("contact.hero.subtitle")}
           </motion.p>
         </div>
       </section>
@@ -77,20 +68,20 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="md:col-span-2"
           >
-            <h2 className="font-display text-2xl text-foreground mb-6">Get in Touch</h2>
+            <h2 className="font-display text-2xl text-foreground mb-6">{t("contact.info.title")}</h2>
             <div className="space-y-5">
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-medium text-foreground text-sm">Locations</p>
-                  <p className="text-muted-foreground text-sm">Hamburg, Germany</p>
-                  <p className="text-muted-foreground text-sm">Dubai, UAE</p>
+                  <p className="font-medium text-foreground text-sm">{t("contact.info.locations")}</p>
+                  <p className="text-muted-foreground text-sm">{t("contact.info.hamburg")}</p>
+                  <p className="text-muted-foreground text-sm">{t("contact.info.dubai")}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-medium text-foreground text-sm">Email</p>
+                  <p className="font-medium text-foreground text-sm">{t("contact.info.email")}</p>
                   <a href="mailto:hello@da-ai.com" className="text-accent text-sm hover:underline">
                     hello@da-ai.com
                   </a>
@@ -99,18 +90,18 @@ const Contact = () => {
               <div className="flex items-start gap-3">
                 <Linkedin className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-medium text-foreground text-sm">LinkedIn</p>
+                  <p className="font-medium text-foreground text-sm">{t("contact.info.linkedin")}</p>
                   <a href="#" className="text-accent text-sm hover:underline">
-                    Connect on LinkedIn
+                    {t("contact.info.connect")}
                   </a>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 rounded-lg border border-accent/20 bg-accent/5 p-5">
-              <p className="font-medium text-foreground text-sm mb-2">Free 30-minute consultation</p>
+              <p className="font-medium text-foreground text-sm mb-2">{t("contact.info.free_title")}</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Not sure where to start? Book a free call to discuss your current situation, goals, and the right next steps.
+                {t("contact.info.free_text")}
               </p>
             </div>
           </motion.div>
@@ -128,16 +119,16 @@ const Contact = () => {
                 <div className="rounded-full bg-accent/10 p-4 mb-4">
                   <Send className="h-8 w-8 text-accent" />
                 </div>
-                <h3 className="font-display text-2xl text-foreground mb-2">Message Sent!</h3>
+                <h3 className="font-display text-2xl text-foreground mb-2">{t("contact.form.sent_title")}</h3>
                 <p className="text-muted-foreground text-sm max-w-sm">
-                  Thank you for reaching out. We'll get back to you within 24 hours.
+                  {t("contact.form.sent_text")}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
-                    Name
+                    {t("contact.form.name")}
                   </label>
                   <input
                     id="name"
@@ -147,12 +138,12 @@ const Contact = () => {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     className="w-full rounded-md border border-border bg-card px-4 py-2.5 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
-                    placeholder="Your name"
+                    placeholder={t("contact.form.name_ph")}
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-                    Email
+                    {t("contact.form.email")}
                   </label>
                   <input
                     id="email"
@@ -162,12 +153,12 @@ const Contact = () => {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     className="w-full rounded-md border border-border bg-card px-4 py-2.5 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
-                    placeholder="your@email.com"
+                    placeholder={t("contact.form.email_ph")}
                   />
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1.5">
-                    Subject
+                    {t("contact.form.subject")}
                   </label>
                   <input
                     id="subject"
@@ -177,12 +168,12 @@ const Contact = () => {
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     className="w-full rounded-md border border-border bg-card px-4 py-2.5 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
-                    placeholder="What is this about?"
+                    placeholder={t("contact.form.subject_ph")}
                   />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
-                    Message
+                    {t("contact.form.message")}
                   </label>
                   <textarea
                     id="message"
@@ -192,20 +183,22 @@ const Contact = () => {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="w-full rounded-md border border-border bg-card px-4 py-2.5 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 resize-none"
-                    placeholder="Tell us about your project or challenge..."
+                    placeholder={t("contact.form.message_ph")}
                   />
                 </div>
                 <button
                   type="submit"
                   className="inline-flex items-center gap-2 rounded bg-accent px-6 py-2.5 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
                 >
-                  Send Message <Send className="h-4 w-4" />
+                  {t("contact.form.send")} <Send className="h-4 w-4" />
                 </button>
               </form>
             )}
           </motion.div>
         </div>
       </section>
+
+      <FooterSection />
     </div>
   );
 };

@@ -4,76 +4,62 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import heroBg from "@/assets/hero-bg.jpg";
-
-const coreBullets = [
-  "Ziel- und Transformationsarchitekturen (Monolith → Services, Cloud, Plattformen)",
-  "Solution & Software Architektur für Produkte, Plattformen und IoT/AI",
-  "Integrations-, API- und Streaming-Architektur (Kafka, Eventing, EAI)",
-  "Architektur-Assessments & Deeskalation laufender Vorhaben",
-];
-
-const services = [
-  {
-    icon: Building2,
-    title: "Enterprise Architektur Beratung",
-    description: "Aufbau von Ziel- und Transformationsarchitekturen für ganze Unternehmensbereiche oder Plattformen: Capability Maps, modulare Systemzuschnitte (DDD-inspiriert), Governance und Roadmaps.",
-    items: [
-      "Zielarchitekturen & Blueprints für Programme/Plattformen",
-      "Capability Maps & fachliche Domänenzuschnitte",
-      "Architekturprinzipien, Governance-Modelle, Entscheidungsgremien",
-    ],
-    reference: "z. B. Scheduling-Plattform für TÜV SÜD Digital (TOGAF-orientiert, arc42/ADRs), Bonitätensystem für ING (38 Mio. Kunden) mit Microservices & Kafka.",
-    teaser: 'Häufig gebucht im Rahmen des \u201ETarget Architecture & Roadmap Project\u201C.',
-  },
-  {
-    icon: Cloud,
-    title: "Solution & Software Architektur",
-    description: "Architektur für konkrete Lösungen, Produkte und Plattformen – von der ersten Idee über das High-Level-Design bis zur Begleitung der Implementierungsteams.",
-    items: [
-      "Solution-Design für neue Produkte, Plattformen und SaaS-Lösungen",
-      "Microservice- & Cloud-Architekturen (AWS/Azure, Container/Kubernetes)",
-      "DDD-basierte Serviceschnitte, C4-Modelle, arc42-Dokumentation",
-    ],
-    reference: "E-Commerce-Plattformen bei About You/SCAYLE, Depot, Lascana (Headless, Multi-Mandanten), IoT-/SaaS-Systeme bei Jungheinrich und Munich Re (AWS IoT & KI).",
-    teaser: 'Typischer Einstieg \u00FCber das \u201ETarget Architecture & Roadmap Project\u201C oder einen Architecture Snapshot.',
-  },
-  {
-    icon: Network,
-    title: "Integrations- & API-Architektur",
-    description: "Design und Modernisierung von Schnittstellenlandschaften – APIs, Events, Messaging, Data Streams – damit Datenflüsse verlässlich, nachvollziehbar und erweiterbar sind.",
-    items: [
-      "API-Strategie & API-Governance (REST, GraphQL, API-First)",
-      "Event- und Messaging-Architektur (Kafka, SQS/SNS, EAI-Patterns)",
-      "Integrationskonzepte zwischen Legacy, SaaS und neuen Plattformen",
-    ],
-    reference: "Kafka-/Streaming-Architekturen bei ING Global Banking und Gauselmann/Merkur, API-basierte Integrationen bei Deutsche Bahn, Depot, About You, Axel Springer.",
-    teaser: "Oft Teil von Enterprise-/Solution-Architekturprojekten oder einem Digital & AI Klarheits-Check.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "IT Architektur Assessments & Reviews",
-    description: "Ehrlicher Blick auf bestehende Lösungen und Programme – mit klaren Risiken, Optionen und Maßnahmenliste statt akademischer Gutachten.",
-    items: [
-      "Architektur-Health-Checks (Struktur, Qualität, Betrieb, Security)",
-      "Risiko- und Schuldenanalyse (Technik & Organisation)",
-      "Priorisierte Maßnahmen & 90-Tage-Roadmap",
-      "Deeskalation laufender Vorhaben, Coaching von Leads/POs",
-    ],
-    reference: "Deeskalation und Cloud-Migration bei DB Systel / Deutsche Bahn, Reviews und Architektur-Standards in größeren Konzernen.",
-    teaser: 'H\u00E4ufiger Einstieg: \u201EDigital & AI Klarheits-Check\u201C mit anschlie\u00DFender Roadmap.',
-  },
-];
-
-const industries = [
-  { icon: ShieldCheck, label: "Banken & Finanzdienstleister", detail: "u. a. ING (Bonität, DWH/Recon, Kafka/Streaming)" },
-  { icon: Briefcase, label: "Versicherungen & Rückversicherer", detail: "u. a. Munich Re (AWS IoT & KI)" },
-  { icon: Factory, label: "Industrie & Logistik", detail: "Jungheinrich (IoT/SaaS), TÜV SÜD Digital" },
-  { icon: Train, label: "Bahn & Mobilität", detail: "Deutsche Bahn / DB Systel (Cloud, API, KI-Bots)" },
-  { icon: ShoppingCart, label: "E-Commerce & Retail", detail: "About You/SCAYLE, Depot, Lascana, Hawesko" },
-  { icon: Gamepad2, label: "Gaming & Payment", detail: "Gauselmann/Merkur (Game Delivery, Microservices)" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+
+  const coreBullets = [
+    t("svc.hero.bullet1"),
+    t("svc.hero.bullet2"),
+    t("svc.hero.bullet3"),
+    t("svc.hero.bullet4"),
+  ];
+
+  const services = [
+    {
+      icon: Building2,
+      title: t("svc.core.s1.title"),
+      description: t("svc.core.s1.desc"),
+      items: [t("svc.core.s1.i1"), t("svc.core.s1.i2"), t("svc.core.s1.i3")],
+      reference: t("svc.core.s1.ref"),
+      teaser: t("svc.core.s1.teaser"),
+    },
+    {
+      icon: Cloud,
+      title: t("svc.core.s2.title"),
+      description: t("svc.core.s2.desc"),
+      items: [t("svc.core.s2.i1"), t("svc.core.s2.i2"), t("svc.core.s2.i3")],
+      reference: t("svc.core.s2.ref"),
+      teaser: t("svc.core.s2.teaser"),
+    },
+    {
+      icon: Network,
+      title: t("svc.core.s3.title"),
+      description: t("svc.core.s3.desc"),
+      items: [t("svc.core.s3.i1"), t("svc.core.s3.i2"), t("svc.core.s3.i3")],
+      reference: t("svc.core.s3.ref"),
+      teaser: t("svc.core.s3.teaser"),
+    },
+    {
+      icon: ClipboardCheck,
+      title: t("svc.core.s4.title"),
+      description: t("svc.core.s4.desc"),
+      items: [t("svc.core.s4.i1"), t("svc.core.s4.i2"), t("svc.core.s4.i3"), t("svc.core.s4.i4")],
+      reference: t("svc.core.s4.ref"),
+      teaser: t("svc.core.s4.teaser"),
+    },
+  ];
+
+  const industries = [
+    { icon: ShieldCheck, label: t("svc.industries.banking"), detail: t("svc.industries.banking_detail") },
+    { icon: Briefcase, label: t("svc.industries.insurance"), detail: t("svc.industries.insurance_detail") },
+    { icon: Factory, label: t("svc.industries.industrial"), detail: t("svc.industries.industrial_detail") },
+    { icon: Train, label: t("svc.industries.rail"), detail: t("svc.industries.rail_detail") },
+    { icon: ShoppingCart, label: t("svc.industries.ecommerce"), detail: t("svc.industries.ecommerce_detail") },
+    { icon: Gamepad2, label: t("svc.industries.gaming"), detail: t("svc.industries.gaming_detail") },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -91,7 +77,7 @@ const Services = () => {
             transition={{ duration: 0.7 }}
             className="font-display text-3xl lg:text-5xl leading-tight tracking-wide text-hero-foreground mb-5 max-w-3xl"
           >
-            Digitale Architektur-Leistungen für komplexe Systemlandschaften
+            {t("svc.hero.title")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +85,7 @@ const Services = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-hero-muted text-lg leading-relaxed mb-6 max-w-2xl"
           >
-            Enterprise-, Solution- & Softwarearchitektur mit über 20 Jahren Erfahrung aus mehr als 150 Projekten – von Finanzindustrie und Bahn bis E-Commerce, Gaming und Industrie.
+            {t("svc.hero.subtitle")}
           </motion.p>
 
           <motion.ul
@@ -129,10 +115,10 @@ const Services = () => {
             className="flex flex-wrap gap-3"
           >
             <Link to="/packages" className="rounded bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity">
-              Angebote ansehen
+              {t("svc.hero.cta_packages")}
             </Link>
             <Link to="/book" className="rounded border border-hero-foreground/30 px-5 py-2.5 text-sm font-semibold text-hero-foreground hover:bg-hero-foreground/10 transition-colors">
-              Erstgespräch vereinbaren
+              {t("svc.hero.cta_book")}
             </Link>
           </motion.div>
         </div>
@@ -148,7 +134,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl lg:text-4xl text-foreground mb-4"
           >
-            Warum Architektur hier nicht „nice to have" ist
+            {t("svc.why.title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -157,7 +143,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-muted-foreground text-lg leading-relaxed mb-8"
           >
-            Systemlandschaften werden verteilter, Teams arbeiten international, Fachbereiche erwarten schnelle Ergebnisse. Ohne klare Architektur entstehen Schatten-IT, Doppelstrukturen und Projekte, die aneinander vorbeilaufen.
+            {t("svc.why.text")}
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -166,12 +152,8 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-3"
           >
-            <p className="text-foreground font-semibold mb-2">DA·AI bringt Struktur hinein:</p>
-            {[
-              "Zielbilder, die Management & Teams verstehen",
-              "Entscheidungen, die dokumentiert und tragfähig sind (ADRs, Prinzipien)",
-              "Roadmaps, mit denen sich Portfolio und Teams steuern lassen",
-            ].map((item) => (
+            <p className="text-foreground font-semibold mb-2">{t("svc.why.intro")}</p>
+            {[t("svc.why.item1"), t("svc.why.item2"), t("svc.why.item3")].map((item) => (
               <div key={item} className="flex items-start gap-3 text-muted-foreground">
                 <Check className="h-4 w-4 mt-1 text-accent shrink-0" />
                 <span>{item}</span>
@@ -191,7 +173,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl lg:text-4xl text-foreground text-center mb-3"
           >
-            Kernleistungen der digitalen Architektur
+            {t("svc.core.title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -200,7 +182,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-10"
           >
-            Jede Leistung ist direkt mit konkreten Referenzen hinterlegt – von Banken und Versicherungen bis zu E-Commerce- und IoT-Plattformen.
+            {t("svc.core.subtitle")}
           </motion.p>
 
           <div className="grid lg:grid-cols-2 gap-6">
@@ -219,7 +201,7 @@ const Services = () => {
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">{s.description}</p>
 
-                <p className="text-xs font-semibold text-foreground mb-2 uppercase tracking-wide">Typische Inhalte</p>
+                <p className="text-xs font-semibold text-foreground mb-2 uppercase tracking-wide">{t("svc.core.typical")}</p>
                 <ul className="space-y-1.5 mb-4">
                   {s.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -249,7 +231,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl lg:text-4xl text-foreground text-center mb-3"
           >
-            Wo DA·AI bisher unterwegs war
+            {t("svc.industries.title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -258,7 +240,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-10"
           >
-            Die Architekturarbeit von DA·AI basiert auf Erfahrungen aus über 150 Projekten in ganz unterschiedlichen Branchen – mit einem Schwerpunkt auf komplexen, regulierten und hochverfügbaren Systemen.
+            {t("svc.industries.subtitle")}
           </motion.p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -292,7 +274,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl lg:text-4xl text-foreground mb-4"
           >
-            Wie aus Leistungen konkrete Projekte werden
+            {t("svc.connect.title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -301,7 +283,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-muted-foreground text-lg leading-relaxed mb-6 max-w-2xl mx-auto"
           >
-            Die Leistungen beschreiben, was wir fachlich tun. Die Angebote beschreiben, wie wir das gemeinsam umsetzen:
+            {t("svc.connect.text")}
           </motion.p>
           <motion.ul
             initial={{ opacity: 0 }}
@@ -318,7 +300,7 @@ const Services = () => {
           </motion.ul>
           <div>
             <Link to="/packages" className="inline-flex items-center gap-2 rounded bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
-              Zu den Angeboten <ArrowRight className="h-4 w-4" />
+              {t("svc.connect.cta")} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -338,7 +320,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl lg:text-4xl text-hero-foreground mb-4"
           >
-            Unsicher, welcher Service der richtige Einstieg ist?
+            {t("svc.final.title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -347,7 +329,7 @@ const Services = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-hero-muted text-lg mb-4 leading-relaxed"
           >
-            In einem 30-minütigen Erstgespräch klären wir:
+            {t("svc.final.text")}
           </motion.p>
           <motion.ul
             initial={{ opacity: 0 }}
@@ -356,12 +338,12 @@ const Services = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-hero-muted/90 text-sm space-y-2 mb-8 max-w-md mx-auto text-left"
           >
-            <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 text-accent shrink-0" /> eure Ausgangslage</li>
-            <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 text-accent shrink-0" /> welche Architekturthemen am dringendsten sind</li>
-            <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 text-accent shrink-0" /> welches Vorgehen am meisten Mehrwert liefert</li>
+            <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 text-accent shrink-0" /> {t("svc.final.item1")}</li>
+            <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 text-accent shrink-0" /> {t("svc.final.item2")}</li>
+            <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 text-accent shrink-0" /> {t("svc.final.item3")}</li>
           </motion.ul>
           <Link to="/book" className="inline-block rounded bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity">
-            Erstgespräch vereinbaren
+            {t("svc.final.cta")}
           </Link>
         </div>
       </section>
