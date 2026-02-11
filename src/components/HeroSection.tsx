@@ -1,14 +1,13 @@
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
-
-const bullets = [
-  "Architecture leadership for 6–24 month transformation programs",
-  "Microservices, cloud & integration architecture",
-  "Governance, capability maps & roadmaps",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
+  const bullets = [t("hero.bullet_1"), t("hero.bullet_2"), t("hero.bullet_3")];
+
   return (
     <section className="relative min-h-[70vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
@@ -25,7 +24,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7 }}
               className="font-display text-4xl lg:text-5xl leading-[1.2] tracking-wide text-hero-foreground mb-5"
             >
-              Digital Architecture<br />& AI Consulting
+              {t("hero.title_1")}<br />{t("hero.title_2")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -33,7 +32,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-hero-muted text-lg leading-snug mb-6"
             >
-              Enterprise & Solution Architecture<br />for DACH & UAE
+              {t("hero.subtitle_1")}<br />{t("hero.subtitle_2")}
             </motion.p>
 
             <motion.ul
@@ -44,7 +43,7 @@ const HeroSection = () => {
             >
               {bullets.map((b, i) => (
                 <motion.li
-                  key={b}
+                  key={i}
                   initial={{ opacity: 0, x: -15 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.35 + i * 0.1 }}
@@ -63,10 +62,10 @@ const HeroSection = () => {
               className="flex flex-wrap gap-3"
             >
               <a href="#packages" className="rounded bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity">
-                Explore Packages
+                {t("hero.cta_packages")}
               </a>
               <a href="/book" className="rounded border border-hero-foreground/30 px-5 py-2.5 text-sm font-semibold text-hero-foreground hover:bg-hero-foreground/10 transition-colors">
-                Talk to Your Principal Architect
+                {t("hero.cta_talk")}
               </a>
             </motion.div>
           </div>
@@ -102,7 +101,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="mt-10 text-hero-muted/70 text-xs text-center lg:text-right"
         >
-          Based in Hamburg & Dubai — Remote & on-site for DACH & UAE
+          {t("hero.location")}
         </motion.p>
       </div>
     </section>

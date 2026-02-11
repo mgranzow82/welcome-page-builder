@@ -1,9 +1,12 @@
 import { ArrowRight, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { blogPosts } from "@/data/blogPosts";
 
 const BlogSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="blog" className="py-12 px-6 lg:px-16 bg-muted/50">
       <div className="mx-auto max-w-7xl">
@@ -14,7 +17,7 @@ const BlogSection = () => {
           transition={{ duration: 0.6 }}
           className="font-display text-3xl lg:text-4xl text-foreground text-center mb-4"
         >
-          Insights &amp; Perspectives
+          {t("blog.title")}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 15 }}
@@ -23,7 +26,7 @@ const BlogSection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-muted-foreground max-w-2xl mx-auto text-center mb-10 text-lg"
         >
-          Practical thinking on architecture, AI, and digital transformation.
+          {t("blog.subtitle")}
         </motion.p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -42,10 +45,10 @@ const BlogSection = () => {
                   {post.tag}
                 </span>
                 <h3 className="font-display text-lg text-card-foreground mb-2 group-hover:text-accent transition-colors">
-                  {post.title}
+                  {t(`blog.post${i + 1}.title`)}
                 </h3>
                 <p className="text-muted-foreground text-sm flex-1 mb-4 leading-relaxed">
-                  {post.excerpt}
+                  {t(`blog.post${i + 1}.excerpt`)}
                 </p>
                 <div className="flex items-center justify-between mt-auto">
                   <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -56,7 +59,7 @@ const BlogSection = () => {
                     to={`/blog/${post.slug}`}
                     className="flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
                   >
-                    Read <ArrowRight className="h-3.5 w-3.5" />
+                    {t("blog.read")} <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>
@@ -69,7 +72,7 @@ const BlogSection = () => {
             to="/blog"
             className="inline-flex items-center gap-2 text-accent font-semibold hover:underline"
           >
-            Alle Beiträge ansehen <ArrowRight className="h-4 w-4" />
+            {t("blog.all_posts")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

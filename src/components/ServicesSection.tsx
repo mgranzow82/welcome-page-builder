@@ -1,14 +1,17 @@
 import { Building2, Cloud, Network, ClipboardCheck, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-
-const services = [
-  { icon: Building2, title: "Enterprise Architecture", description: "Enterprise leadership for clear month transformation programs", cta: "Learn More" },
-  { icon: Cloud, title: "Solution & Cloud Architecture", description: "Deliverables, shots, designs, PrinceDiameter Requests & integrate architectures", cta: "Learn More" },
-  { icon: Network, title: "Integration & API Architecture", description: "Architecture lifecycle, strategy, patterns, business & API references", cta: "View More" },
-  { icon: ClipboardCheck, title: "IT Architecture Assessments", description: "Expose architecture clarity, goals, and IT factors", cta: "View Offering" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
+
+  const services = [
+    { icon: Building2, title: t("services.enterprise.title"), description: t("services.enterprise.desc"), cta: t("services.cta_learn") },
+    { icon: Cloud, title: t("services.cloud.title"), description: t("services.cloud.desc"), cta: t("services.cta_learn") },
+    { icon: Network, title: t("services.integration.title"), description: t("services.integration.desc"), cta: t("services.cta_view") },
+    { icon: ClipboardCheck, title: t("services.assessment.title"), description: t("services.assessment.desc"), cta: t("services.cta_view") },
+  ];
+
   return (
     <section id="services" className="py-12 px-6 lg:px-16 bg-background">
       <div className="mx-auto max-w-7xl text-center">
@@ -19,7 +22,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="font-display text-3xl lg:text-4xl text-foreground mb-4"
         >
-          Structure. Strategy. Scalability.
+          {t("services.title")}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 15 }}
@@ -28,7 +31,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-muted-foreground max-w-2xl mx-auto mb-10 text-lg"
         >
-          Get from "We know we must change" to a clear target, architecture and roadmap – fast, pragmatic, decision-ready.
+          {t("services.subtitle")}
         </motion.p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

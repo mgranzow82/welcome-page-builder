@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CTASection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="relative py-12 px-6 lg:px-16 overflow-hidden">
       <div className="absolute inset-0">
@@ -16,7 +19,7 @@ const CTASection = () => {
           transition={{ duration: 0.6 }}
           className="font-display text-3xl lg:text-4xl text-hero-foreground mb-6"
         >
-          Start with a 30-minute consultation
+          {t("cta.title")}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 15 }}
@@ -25,8 +28,7 @@ const CTASection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-hero-muted text-lg mb-8 leading-relaxed"
         >
-          If you're at a point where "something needs to change," but it's unclear what exactly, let's talk.
-          In a free initial conversation, we clarify your current situation, your goals, and the right next steps.
+          {t("cta.text")}
         </motion.p>
         <motion.a
           initial={{ opacity: 0, scale: 0.95 }}
@@ -36,7 +38,7 @@ const CTASection = () => {
           href="/book"
           className="inline-block rounded bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
         >
-          Book a Free Call
+          {t("cta.button")}
         </motion.a>
       </div>
     </section>
