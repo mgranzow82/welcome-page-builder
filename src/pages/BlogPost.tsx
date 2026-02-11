@@ -4,30 +4,29 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { blogPosts } from "@/data/blogPosts";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { t } = useLanguage();
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) return <Navigate to="/blog" replace />;
 
-  // Simple markdown-ish rendering: headings, bold, lists, paragraphs
+  const translatedContent = t(post.contentKey);
+
   const renderContent = (raw: string) => {
     return raw.split("\n\n").map((block, i) => {
       const trimmed = block.trim();
 
       if (trimmed.startsWith("## ")) {
         return (
-          <h2
-            key={i}
-            className="font-display text-2xl text-foreground mt-8 mb-3"
-          >
+          <h2 key={i} className="font-display text-2xl text-foreground mt-8 mb-3">
             {trimmed.replace("## ", "")}
           </h2>
         );
       }
 
-      // List block
       if (trimmed.startsWith("- ") || trimmed.startsWith("1. ")) {
         const items = trimmed.split("\n");
         const isOrdered = trimmed.startsWith("1.");
@@ -51,7 +50,6 @@ const BlogPost = () => {
         );
       }
 
-      // Regular paragraph
       return (
         <p
           key={i}
@@ -77,7 +75,7 @@ const BlogPost = () => {
             to="/blog"
             className="inline-flex items-center gap-1.5 text-hero-muted hover:text-hero-foreground text-sm mb-6 transition-colors"
           >
-            <ArrowLeft className="h-4 w-4" /> Alle Beiträge
+            <ArrowLeft className="h-4 w-4" /> {t("blog.back")}
           </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -93,7 +91,7 @@ const BlogPost = () => {
               </span>
             </div>
             <h1 className="font-display text-3xl lg:text-4xl leading-tight">
-              {post.title}
+              {t(post.titleKey)}
             </h1>
           </motion.div>
         </div>
@@ -107,7 +105,7 @@ const BlogPost = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mx-auto max-w-3xl prose-lg"
         >
-          {renderContent(post.content)}
+          {renderContent(translatedContent)}
         </motion.div>
       </article>
 
@@ -118,7 +116,7 @@ const BlogPost = () => {
             to="/blog"
             className="inline-flex items-center gap-1.5 text-accent hover:underline font-semibold text-sm"
           >
-            <ArrowLeft className="h-4 w-4" /> Zurück zur Übersicht
+            <ArrowLeft className="h-4 w-4" /> {t("blog.back_overview")}
           </Link>
         </div>
       </div>

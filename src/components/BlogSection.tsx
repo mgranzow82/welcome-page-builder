@@ -45,10 +45,10 @@ const BlogSection = () => {
                   {post.tag}
                 </span>
                 <h3 className="font-display text-lg text-card-foreground mb-2 group-hover:text-accent transition-colors">
-                  {t(`blog.post${i + 1}.title`)}
+                  {t(post.titleKey)}
                 </h3>
                 <p className="text-muted-foreground text-sm flex-1 mb-4 leading-relaxed">
-                  {t(`blog.post${i + 1}.excerpt`)}
+                  {t(post.excerptKey)}
                 </p>
                 <div className="flex items-center justify-between mt-auto">
                   <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
