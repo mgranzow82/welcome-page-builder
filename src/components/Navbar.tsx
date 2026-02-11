@@ -53,18 +53,17 @@ const Navbar = () => {
             <ChevronDown className="h-3 w-3" />
           </button>
           {langOpen && (
-            <div className="absolute right-0 mt-2 w-48 rounded-md bg-card shadow-lg border border-border py-1">
+            <div className="absolute right-0 top-full mt-1 w-48 rounded-md bg-card shadow-xl border border-border z-50">
               {[
-                { flag: "🌐", label: "EN · Dubai / UAE" },
-                { flag: "🇩🇪", label: "DE · Dach / DACH" },
-                { flag: "🇦🇪", label: "AR · UAE / Arabic" },
+                { label: "EN · Dubai / UAE" },
+                { label: "DE · Dach / DACH" },
+                { label: "AR · UAE / Arabic" },
               ].map((lang) => (
                 <button
                   key={lang.label}
-                  className="flex w-full items-center gap-2 px-4 py-2 text-sm text-card-foreground hover:bg-muted transition-colors"
+                  className="flex w-full items-center gap-2 px-4 py-2 text-sm text-card-foreground hover:bg-muted transition-colors first:rounded-t-md last:rounded-b-md"
                   onClick={() => setLangOpen(false)}
                 >
-                  <span>{lang.flag}</span>
                   {lang.label}
                 </button>
               ))}
