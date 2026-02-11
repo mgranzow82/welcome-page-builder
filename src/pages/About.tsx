@@ -18,12 +18,6 @@ const About = () => {
     { value: "10+", label: t("about.stats.industries") },
   ];
 
-  const references = [
-    { client: t("about.refs.tuev.client"), title: t("about.refs.tuev.title"), role: t("about.refs.tuev.role"), description: t("about.refs.tuev.desc") },
-    { client: t("about.refs.ing.client"), title: t("about.refs.ing.title"), role: t("about.refs.ing.role"), description: t("about.refs.ing.desc") },
-    { client: t("about.refs.db.client"), title: t("about.refs.db.title"), role: t("about.refs.db.role"), description: t("about.refs.db.desc") },
-    { client: t("about.refs.ay.client"), title: t("about.refs.ay.title"), role: t("about.refs.ay.role"), description: t("about.refs.ay.desc") },
-  ];
 
   const methodology = [
     t("about.method.item1"),
@@ -175,44 +169,40 @@ const About = () => {
         </div>
       </section>
 
-      {/* 4. Referenzprojekte */}
+      {/* 4. Case Studies Teaser */}
       <section className="py-12 px-6 lg:px-16 bg-background">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-5xl text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6 }}
-            className="font-display text-3xl lg:text-4xl text-foreground text-center mb-10"
+            className="font-display text-3xl lg:text-4xl text-foreground mb-4"
           >
             {t("about.refs.title")}
           </motion.h2>
-          <div className="grid lg:grid-cols-2 gap-6 mb-8">
-            {references.map((ref, i) => (
-              <motion.div
-                key={ref.client}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-lg border border-border bg-card p-6 shadow-sm"
-              >
-                <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-1">{ref.client}</p>
-                <h3 className="font-display text-lg text-card-foreground mb-1">{ref.title}</h3>
-                <p className="text-xs text-muted-foreground mb-3">{t("about.refs.role_label")}: {ref.role}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{ref.description}</p>
-              </motion.div>
-            ))}
-          </div>
           <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-muted-foreground text-sm text-center italic"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-muted-foreground text-lg mb-6 leading-relaxed max-w-2xl mx-auto"
           >
-            {t("about.refs.footnote")}
+            {t("about.refs.teaser_text")}
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Link
+              to="/case-studies"
+              className="inline-flex items-center gap-2 rounded bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
+            >
+              {t("about.refs.view_cases")} <ArrowRight className="h-4 w-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
