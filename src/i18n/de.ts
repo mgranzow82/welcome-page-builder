@@ -317,65 +317,179 @@ export const de: Record<string, string> = {
   "notfound.text": "Seite nicht gefunden",
   "notfound.link": "Zur Startseite",
 
-  // Blog posts (DE versions - same as original German content)
-  "blog.post1.title": "Warum Enterprise Architecture 2026 wichtig ist",
-  "blog.post1.excerpt": "Wie strukturierte Architekturentscheidungen kostspielige Nacharbeit verhindern und die digitale Transformation in DACH-Unternehmen beschleunigen.",
-  "blog.post1.content": `Enterprise Architecture ist längst kein akademisches Konzept mehr – sie entscheidet darüber, ob digitale Transformation gelingt oder im Chaos endet.
+  // Blog posts (DE versions)
+  "blog.post1.title": "Warum Enterprise Architecture für schnell wachsende Unternehmen in Dubai und den UAE entscheidend ist",
+  "blog.post1.excerpt": "Schnell wachsendes Unternehmen in Dubai oder den UAE? Erfahren Sie, wie Enterprise Architecture Systeme, Teams und Investitionen beim Skalieren im Einklang hält.",
+  "blog.post1.content": `Schnelles Wachstum fühlt sich gut an – bis Systeme, Teams und Projekte in verschiedene Richtungen ziehen.
 
-## Die Herausforderung
+Viele Organisationen in Dubai und den UAE skalieren Personal, Produkte und Märkte in hohem Tempo. Neue Geschäftsbereiche, neue digitale Kanäle, neue Partner – und darunter eine IT-Landschaft, die organisch gewachsen ist: Legacy-Systeme, neue SaaS-Tools, Cloud-Dienste, Vendor-Plattformen und immer mehr "schnelle Integrationen".
 
-In vielen Unternehmen der DACH-Region wachsen IT-Landschaften über Jahre organisch. Was als pragmatische Lösung begann, wird zum Hindernis: Datensilos, inkonsistente APIs, fehlende Transparenz über Systemabhängigkeiten.
+Irgendwann spürt die Führungsebene eine Lücke:
 
-## Warum 2026 der Wendepunkt ist
+- Wir investieren stark, aber es fühlt sich nicht wie Fortschritt an.
+- Projekte treten sich gegenseitig auf die Füße.
+- Niemand hat ein vollständiges Bild unserer Systeme und Datenflüsse.
+- Risiken, Compliance und Sicherheit lassen sich nicht einfach beantworten.
 
-Mit dem Druck durch KI-Integration, regulatorische Anforderungen (DORA, NIS2) und den Fachkräftemangel wird strukturierte Architekturarbeit zum Wettbewerbsvorteil. Unternehmen, die jetzt in Zielarchitekturen investieren, vermeiden kostspielige Nacharbeit.
+Hier wird Enterprise Architecture (EA) zum strategischen Asset statt zum Luxus.
 
-## Der pragmatische Ansatz
+## Die Realität schnellen Wachstums in Dubai und den UAE
 
-Statt monatelanger Analysephasen setzen wir auf iterative Architekturarbeit: Zielbilder in 4–6 Wochen, entscheidungsreife Roadmaps und Dokumentation, die Teams tatsächlich nutzen.
+Dubai und die UAE sind auf Geschwindigkeit ausgelegt: neue Initiativen, neue Regulierungen, neue Wettbewerber, neue Partnerschaften. Genau das macht die Region spannend – und erzeugt gleichzeitig architektonischen Druck.
 
-**Fazit:** Enterprise Architecture ist kein Luxus, sondern die Grundlage für fundierte Technologieentscheidungen – besonders in regulierten Branchen.`,
+## Was Enterprise Architecture tatsächlich leistet
 
-  "blog.post2.title": "KI-bereite Infrastruktur: Ein pragmatischer Leitfaden",
-  "blog.post2.excerpt": "Jenseits von Buzzwords – konkrete Schritte, um eure IT-Landschaft auf sinnvolle KI-Integration vorzubereiten.",
-  "blog.post2.content": `Jedes Unternehmen spricht über KI – aber die wenigsten haben eine Infrastruktur, die KI-Workloads tatsächlich tragen kann.
+Im Kern beantwortet EA drei einfache Fragen:
 
-## Mehr als GPU-Cluster
+1. **Was brauchen wir als Business?** Welche Capabilities, Produkte und Journeys sind kritisch?
+2. **Wie unterstützen Systeme, Daten und Prozesse das heute?** Wo sind Lücken und Schwächen?
+3. **Wie sollte unser Zielbild aussehen – und wie kommen wir dorthin?**
 
-AI-Readiness beginnt nicht bei der Modellauswahl, sondern bei der Datenqualität, den Integrationsschichten und der Governance. Ohne saubere APIs und konsistente Datenmodelle bleiben KI-Projekte Insellösungen.
+## Typische Symptome fehlender oder schwacher EA
 
-## Die fünf Säulen der AI-Ready Infrastructure
+- Niemand hat eine aktuelle, geteilte Systemkarte
+- Projekte überraschen sich ständig gegenseitig
+- Integrations- und Datenarbeit dominiert die Delivery
+- Architektur-Diskussionen enden nie wirklich
+- Risiko- und Compliance-Fragen sind schwer zu beantworten
 
-1. **Datenarchitektur** – Konsistente Datenmodelle, Data Mesh oder Data Lakehouse je nach Reife
-2. **API-First-Ansatz** – Standardisierte Schnittstellen für Modell-Integration
-3. **Cloud-native Compute** – Skalierbare Ressourcen für Training und Inferenz
-4. **Governance & Security** – Datenschutz, Bias-Monitoring, Audit-Trails
-5. **Team-Enablement** – Architektur-Patterns, die Entwicklerteams selbstständig nutzen können
+**Nächste Schritte:** Bei DA·AI helfen wir Unternehmen genau dabei – typischerweise beginnend mit einem Target Architecture & Roadmap Project.`,
 
-## Unser Ansatz
+  "blog.post2.title": "Wie man eine Architektur-Roadmap für die nächsten 90 Tage und 12 Monate erstellt",
+  "blog.post2.excerpt": "Lernen Sie einen praktischen Weg, eine 90-Tage- und 12-Monats-Architektur-Roadmap zu erstellen, die Teams in Dubai und den UAE tatsächlich umsetzen können.",
+  "blog.post2.content": `Viele Organisationen behaupten, eine Roadmap zu haben. In der Praxis ist es oft nur eine bunte Folie: eine Liste von Initiativen auf einer Zeitachse, ohne echten Bezug zu Kapazität, Abhängigkeiten oder Risiko.
 
-Wir starten mit einem Architecture Assessment: Wo steht eure Infrastruktur heute? Welche Quick Wins gibt es? Und wie sieht eine realistische 12-Monats-Roadmap aus?
+Eine gute Architektur-Roadmap ist kein Kunstwerk. Sie ist ein Werkzeug, um Zielarchitektur mit dem zu verbinden, was Teams tatsächlich liefern können.
 
-**Das Ergebnis:** Keine PowerPoint-Visionen, sondern ein konkreter Plan mit priorisierten Maßnahmen.`,
+## Warum "Wunschlisten"-Roadmaps scheitern
 
-  "blog.post3.title": "Integrationsmuster für das moderne Unternehmen",
-  "blog.post3.excerpt": "Event-driven, API-first oder hybrid? Die richtige Integrationsstrategie für eure Organisation.",
-  "blog.post3.content": `Die Wahl der richtigen Integrationsstrategie bestimmt, wie flexibel und resilient eine IT-Landschaft ist.
+- **Kein Bezug zur Zielarchitektur** – Ohne strukturelles Ziel wird die Roadmap eine Liste "guter Ideen".
+- **Keine klaren Prioritäten** – Alles ist "kritisch", also ist nichts kritisch.
+- **Keine realistische Kapazitätssicht** – Roadmaps ignorieren Teamgröße und Vendor-Einschränkungen.
+- **Versteckte Abhängigkeiten** – Eine Initiative setzt stillschweigend voraus, dass eine andere bereits geliefert hat.
 
-## Das Spektrum der Möglichkeiten
+## Die 90-Tage- vs. 12-Monats-Sicht
 
-Zwischen synchronen REST-APIs und vollständig event-getriebenen Architekturen mit Kafka liegt ein breites Spektrum. Die richtige Wahl hängt von Faktoren ab, die oft übersehen werden.
+**Die nächsten 90 Tage** fokussieren auf Momentum und Risikoreduktion: architektonische Enabler, Quick Wins und frühzeitige Risikominimierung.
 
-## Entscheidungskriterien
+**Die nächsten 12 Monate** fokussieren auf Richtung und große Veränderungen: Welche Systeme migrieren, ersetzen oder integrieren wir?
 
-- **Konsistenzanforderungen** – Braucht ihr sofortige Konsistenz oder reicht Eventual Consistency?
-- **Volumen & Latenz** – Wie viele Events pro Sekunde? Welche Antwortzeiten sind akzeptabel?
-- **Team-Reife** – Kann das Team event-getriebene Systeme betreiben und debuggen?
-- **Regulatorik** – Gibt es Audit-Anforderungen an Nachvollziehbarkeit?
+- 90 Tage halten euch ehrlich.
+- 12 Monate halten euch intentional.
 
-## Hybride Ansätze in der Praxis
+## Initiativen, Abhängigkeiten und Risiken kartieren
 
-In der Realität funktionieren hybride Ansätze am besten: Synchrone APIs für User-facing Interaktionen, Events für Hintergrundprozesse und Daten-Synchronisation.
+1. Architekturaufgaben und Initiativen auflisten
+2. Nach Domäne oder Capability clustern
+3. Auf der 90-Tage- und 12-Monats-Timeline platzieren
+4. Abhängigkeiten hervorheben
+5. Architektonische Risiken identifizieren
 
-**Unsere Erfahrung:** In über 150 Projekten haben wir gelernt, dass die beste Architektur diejenige ist, die zum Team und zum Kontext passt – nicht die, die gerade im Trend liegt.`,
+**Nächste Schritte:** Bei DA·AI helfen wir Organisationen in Dubai und den UAE, praktische Architektur-Roadmaps zu erstellen – typischerweise durch ein Target Architecture & Roadmap Project.`,
+
+  "blog.post3.title": "Fünf Anzeichen, dass Ihre Organisation in den UAE ein Enterprise Architecture Reset braucht",
+  "blog.post3.excerpt": "Chaos in Systemen und Projekten? Entdecken Sie fünf klare Anzeichen, dass Ihre Organisation in den UAE ein Enterprise Architecture Reset braucht.",
+  "blog.post3.content": `Enterprise Architecture scheitert normalerweise nicht über Nacht. Sie erodiert langsam.
+
+Ein paar Ausnahmen werden "nur dieses eine Mal" gemacht. Ein System wird schnell integriert, ohne einem Muster zu folgen. Eine kritische Initiative wird unter Zeitdruck durchgedrückt.
+
+## Anzeichen 1 – Niemand hat eine aktuelle, geteilte Karte eurer Systeme
+
+Fragt drei Leute, die "Hauptsysteme und ihre Verbindungen" zu zeichnen. Wenn ihr drei sehr unterschiedliche Antworten bekommt, ist das ein Signal.
+
+## Anzeichen 2 – Projekte überraschen sich ständig gegenseitig
+
+Ein Projekt ändert ein Datenmodell oder Interface und bricht damit unerwartet ein anderes Projekt. Release-Zeitpläne kollidieren, weil Infrastrukturänderungen nicht kommuniziert wurden.
+
+## Anzeichen 3 – Integrationsarbeit explodiert
+
+Wachsende Anzahl von Punkt-zu-Punkt-Schnittstellen. Mehr Zeit für "Plumbing" als für Business-Features. In regulierten Umgebungen wie Banking oder Government in den UAE entstehen zusätzlich Audit- und Compliance-Risiken.
+
+## Anzeichen 4 – Architektur-Diskussionen enden nie wirklich
+
+Dieselben Debatten tauchen alle paar Monate wieder auf. Entscheidungen werden in Meetings getroffen, aber nicht dokumentiert.
+
+## Anzeichen 5 – Risiko- und Compliance-Fragen sind schwer zu beantworten
+
+Fragen wie "Wo genau werden die Daten von Kunde X gespeichert?" erfordern komplexe Nachforschungen.
+
+## Was ein EA Reset in der Praxis aussieht
+
+1. **Kurzes Assessment** – Wesentliches kartieren, Schlüsselrisiken identifizieren.
+2. **Zielarchitektur-Skizze** – Domänen, Kernsysteme, Integrationsmuster klären.
+3. **Entscheidungen und Prinzipien** – ADRs für die dringendsten Themen.
+4. **90-Tage- und 12-Monats-Roadmap** – Konkreter Plan zur Stabilisierung.
+
+**Nächste Schritte:** Bei DA·AI sind wir auf genau diese Art von EA-Arbeit für Organisationen in Dubai/UAE spezialisiert.`,
+
+  "blog.post4.title": "API- und Integrationsarchitektur für Banken und Fintechs in den UAE",
+  "blog.post4.excerpt": "Banken und Fintechs in den UAE haben komplexe Integrationslandschaften. Lernen Sie Schlüsselprinzipien für nachhaltige API- und Integrationsarchitektur.",
+  "blog.post4.content": `Banken und Fintechs in den UAE sitzen auf einigen der komplexesten Integrationslandschaften der Region. Kernbankensysteme, digitale Kanäle, Payment-Gateways, KYC-Anbieter, Risk-Engines, regulatorisches Reporting – alles verbunden durch Dutzende oder Hunderte von Schnittstellen.
+
+## Die Integrationsrealität in Banken und Fintechs
+
+- **Mehrere Kernsysteme und Ledger** – manchmal aus verschiedenen Generationen.
+- **Digitale Kanäle**: Web, Mobile, Filialen, Callcenter, ATMs, Partner.
+- **Externe Abhängigkeiten**: Zahlungsnetzwerke, Regulierer, Identitätsanbieter.
+- **Viele Vendors und Plattformen**: Kartensysteme, CRM, AML, Risk, Loyalty.
+
+## Warum Punkt-zu-Punkt eine Sackgasse ist
+
+Im großen Maßstab erzeugt Punkt-zu-Punkt versteckte Komplexität: das N²-Problem, enge Kopplung, schweres Regressionstesting und operatives Risiko.
+
+## Prinzipien für nachhaltige API- und Integrationsarchitektur
+
+**1. API-first mit klarer Ownership** – APIs aus der Perspektive von Business-Capabilities designen, nicht aus Legacy-Systemen.
+
+**2. Kanäle, Prozesse und Systems of Record trennen** – Dedizierte Channel-APIs, klare Prozess-Services, Systems of Record fokussiert auf Integrität.
+
+**3. Event-driven Patterns wo sie passen** – Event-Streaming ist mächtig, wenn mehrere Systeme auf dasselbe Business-Event reagieren müssen.
+
+## APIs die halten
+
+- **Domänenorientiertes API-Design** – Um Domänen herum designen: Customer, Account, Payment, Risk.
+- **Versionierung und Kompatibilität** – Rückwärtskompatibilität planen.
+- **Sicherheit und Compliance** – Starke Authentifizierung, Audit-Logging, Datenschutz.
+
+**Nächste Schritte:** Bei DA·AI helfen wir Banken und Fintechs in den UAE, von Ad-hoc-Integrationen zu einem konsistenten Set von Patterns zu kommen.`,
+
+  "blog.post5.title": "AI Readiness aus Architektur-Perspektive: Was Organisationen in Dubai zuerst brauchen",
+  "blog.post5.excerpt": "Bevor Sie AI-Piloten in Dubai starten, prüfen Sie ob Ihre Architektur bereit ist. Lernen Sie, was zuerst vorhanden sein muss.",
+  "blog.post5.content": `AI steht auf jeder Agenda in Dubai – von Regierungsstrategien bis zu Vorstandsgesprächen. Viele Organisationen stehen unter Druck, "etwas mit AI zu machen".
+
+Das Risiko: AI-Initiativen ohne eine Architektur zu starten, die sie tatsächlich unterstützen kann.
+
+## Warum AI anders ist als nur ein weiteres System
+
+- **Datenhungrig** – AI-Systeme brauchen große Mengen relevanter, qualitativ hochwertiger Daten.
+- **Querschneidend** – AI braucht oft Daten aus mehreren Domänen.
+- **Hochriskant** – AI-beeinflusste Entscheidungen können regulatorische und reputative Auswirkungen haben.
+- **Lebenszyklus-getrieben** – Modelle driften, brauchen Monitoring, Retraining.
+
+## Kern-Architektur-Grundlagen für AI Readiness
+
+**1. Datenlandschaft und Qualität** – Wissen, wo kritische Daten liegen. Konsistente Identifier für Schlüsselentitäten.
+
+**2. Integration und Event-Flows** – AI-Lösungen konsumieren Daten aus mehreren Systemen und publizieren Ergebnisse zurück. Fragile Integration wird durch AI verstärkt.
+
+**3. Sicherheit, Datenschutz und Compliance** – Welche Daten dürfen legal für AI genutzt werden? Wo werden sie verarbeitet?
+
+## AI als Capability in der Architektur
+
+Statt AI in bestehende Boxen zu streuen, AI als Capability modellieren: "Customer Insight & Analytics", "Document Understanding", "Risk Scoring". Das vermeidet Einmal-Features und klärt Ownership.
+
+## Pragmatische AI Readiness Checkliste
+
+1. Wir wissen, wo unsere wichtigsten Daten liegen
+2. Wir haben eine minimale Karte unserer Systeme
+3. Wir können relevante Daten ohne manuelle Exporte zugreifen
+4. Wir verstehen, welche Daten wir legal für AI nutzen dürfen
+5. Wir haben grundlegendes Logging und Monitoring
+6. Wir haben Klarheit über Daten-Domain-Ownership
+7. Wir haben eine sichere Umgebung für AI-Experimente
+8. Wir wissen, welche Business-Probleme AI lösen soll
+9. Wir haben über die Integration von AI-Ergebnissen nachgedacht
+10. Wir haben eine Idee, wer AI-Operations verantworten würde
+
+**Nächste Schritte:** Bei DA·AI starten wir oft mit einem Digital & AI Clarity Check, der eine Management-ready Übersicht und eine 90-Tage-Roadmap Richtung AI Readiness liefert.`,
 };
