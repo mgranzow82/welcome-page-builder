@@ -5,9 +5,11 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import heroBg from "@/assets/hero-bg.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
 const About = () => {
   const { t } = useLanguage();
+  useDocumentMeta({ title: t("seo.about.title"), description: t("seo.about.description") });
 
   const stats = [
     { value: "20+", label: t("about.stats.years") },

@@ -5,10 +5,11 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import heroBg from "@/assets/hero-bg.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
 const Services = () => {
   const { t } = useLanguage();
-
+  useDocumentMeta({ title: t("seo.services.title"), description: t("seo.services.description") });
   const coreBullets = [
     t("svc.hero.bullet1"),
     t("svc.hero.bullet2"),

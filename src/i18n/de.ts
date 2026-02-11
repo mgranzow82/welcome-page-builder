@@ -1,4 +1,21 @@
 export const de: Record<string, string> = {
+  // SEO Meta
+  "seo.home.title": "DA·AI – Digitale Architektur & KI-Beratung | DACH & VAE",
+  "seo.home.description": "Enterprise- & Solution-Architecture-Leadership für DACH & VAE. Zielarchitekturen, Roadmaps und KI-Readiness.",
+  "seo.services.title": "Leistungen – DA·AI | Enterprise-, Solution- & Integrationsarchitektur",
+  "seo.services.description": "Enterprise-Architektur, Solution-Design, API- & Integrationsarchitektur und digitale Assessments für Organisationen in DACH & VAE.",
+  "seo.packages.title": "Angebote – DA·AI | Zielarchitektur & Roadmap-Projekte",
+  "seo.packages.description": "Drei Stufen – Clarity Sprint, Architecture Project oder Transformation Office – zugeschnitten auf Ihre Organisation.",
+  "seo.about.title": "Über DA·AI – 20+ Jahre Architektur-Leadership",
+  "seo.about.description": "Das Team hinter DA·AI. Über 20 Jahre Enterprise-Architektur-Erfahrung in Banking, Versicherung, Industrie und Tech.",
+  "seo.contact.title": "Kontakt – DA·AI | Sprechen Sie uns an",
+  "seo.contact.description": "Kontaktieren Sie DA·AI für Enterprise-Architektur-Beratung in Hamburg, Dubai und remote. Kostenlose Erstberatung möglich.",
+  "seo.book.title": "Termin buchen – DA·AI | Kostenlose Architektur-Beratung",
+  "seo.book.description": "Vereinbaren Sie ein kostenloses 30-Minuten-Gespräch mit DA·AI zu Enterprise-Architektur, Integration oder KI-Readiness.",
+  "seo.blog.title": "Blog – DA·AI | Architektur- & KI-Insights",
+  "seo.blog.description": "Thought Leadership zu Enterprise-Architektur, API-Integration, KI-Readiness und digitaler Transformation für Dubai/VAE und DACH.",
+  "seo.notfound.title": "Seite nicht gefunden – DA·AI",
+  "seo.notfound.description": "Die gesuchte Seite existiert nicht. Zurück zur DA·AI-Startseite.",
   // Navbar
   "nav.services": "Leistungen",
   "nav.packages": "Angebote",

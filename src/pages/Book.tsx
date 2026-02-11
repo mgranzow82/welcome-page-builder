@@ -3,9 +3,11 @@ import heroBg from "@/assets/hero-bg.jpg";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
 const Book = () => {
   const { t } = useLanguage();
+  useDocumentMeta({ title: t("seo.book.title"), description: t("seo.book.description") });
 
   return (
     <div className="min-h-screen">

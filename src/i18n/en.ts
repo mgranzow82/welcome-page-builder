@@ -1,4 +1,21 @@
 export const en: Record<string, string> = {
+  // SEO Meta
+  "seo.home.title": "DA·AI – Digital Architecture & AI Consulting | DACH & UAE",
+  "seo.home.description": "Enterprise & solution architecture leadership for DACH & UAE. Target architectures, roadmaps and AI readiness.",
+  "seo.services.title": "Services – DA·AI | Enterprise, Solution & Integration Architecture",
+  "seo.services.description": "Enterprise architecture, solution design, API & integration architecture and digital assessments for organisations in DACH & UAE.",
+  "seo.packages.title": "Packages – DA·AI | Target Architecture & Roadmap Projects",
+  "seo.packages.description": "Choose from three tiers – Clarity Sprint, Architecture Project or Transformation Office – tailored to your organisation's needs.",
+  "seo.about.title": "About DA·AI – 20+ Years of Architecture Leadership",
+  "seo.about.description": "Meet the team behind DA·AI. 20+ years of enterprise architecture experience across banking, insurance, industrial and tech sectors.",
+  "seo.contact.title": "Contact DA·AI – Get in Touch",
+  "seo.contact.description": "Reach out to DA·AI for enterprise architecture consulting in Hamburg, Dubai and remote. Free initial consultation available.",
+  "seo.book.title": "Book a Call – DA·AI | Free Architecture Consultation",
+  "seo.book.description": "Schedule a free 30-minute consultation with DA·AI to discuss your enterprise architecture, integration or AI readiness challenges.",
+  "seo.blog.title": "Blog – DA·AI | Architecture & AI Insights",
+  "seo.blog.description": "Thought leadership on enterprise architecture, API integration, AI readiness and digital transformation for Dubai/UAE and DACH.",
+  "seo.notfound.title": "Page Not Found – DA·AI",
+  "seo.notfound.description": "The page you are looking for does not exist. Return to DA·AI homepage.",
   // Navbar
   "nav.services": "Services",
   "nav.packages": "Packages",

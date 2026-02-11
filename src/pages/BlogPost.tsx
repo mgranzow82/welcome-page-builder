@@ -5,11 +5,17 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { blogPosts } from "@/data/blogPosts";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useLanguage();
   const post = blogPosts.find((p) => p.slug === slug);
+
+  useDocumentMeta({
+    title: post ? `${t(post.titleKey)} – DA·AI` : t("seo.notfound.title"),
+    description: post ? t(post.excerptKey) : t("seo.notfound.description"),
+  });
 
   if (!post) return <Navigate to="/blog" replace />;
 
