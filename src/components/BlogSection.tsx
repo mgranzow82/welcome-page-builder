@@ -39,7 +39,7 @@ const BlogSection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group flex flex-col rounded-lg border border-border bg-card overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="h-1.5 bg-accent" />
+              <div className="h-1.5" style={{ backgroundColor: post.color }} />
               <div className="flex flex-col flex-1 p-6">
                 <span className="inline-block self-start rounded-full bg-accent/10 px-3 py-0.5 text-xs font-medium text-accent mb-3">
                   {post.tag}

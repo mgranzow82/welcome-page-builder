@@ -5,6 +5,7 @@ export interface BlogPost {
   contentKey: string;
   date: string;
   tag: string;
+  color: string;
   // Keep these for fallback / non-translated contexts
   title: string;
   excerpt: string;
@@ -21,6 +22,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Fast-growing organisation in Dubai or the UAE? Learn how Enterprise Architecture keeps systems, teams and investments aligned as you scale.",
     date: "Feb 10, 2026",
     tag: "Enterprise",
+    color: "hsl(15, 80%, 55%)",
     content: `Fast growth feels great – until your systems, teams and projects start pulling in different directions.
 
 Many organisations in Dubai and the wider UAE are scaling headcount, products and markets at high speed. New business units, new digital channels, new partners – and underneath, an IT landscape that has grown organically: legacy systems, new SaaS tools, cloud services, vendor platforms and a growing amount of "quick integrations".
@@ -86,6 +88,7 @@ For CIOs and Heads of IT in Dubai and the UAE, Enterprise Architecture is not a 
     excerpt: "Learn a practical way to build a 90-day and 12-month architecture roadmap that teams in Dubai and the UAE can actually execute.",
     date: "Feb 5, 2026",
     tag: "Roadmap",
+    color: "hsl(210, 70%, 50%)",
     content: `Many organisations claim to have a roadmap. In practice, it's often just a colourful slide: a list of initiatives placed on a timeline, with little connection to real capacity, dependencies or risk.
 
 A good architecture roadmap is not a piece of artwork. It is a tool to connect your target architecture with what teams can actually deliver, make trade-offs and dependencies visible, and decide what happens in the next 90 days vs. the next 12 months.
@@ -137,6 +140,7 @@ In fast-moving environments like Dubai, the roadmap is not a contract – it is 
     excerpt: "Chaos in systems and projects? Discover five clear signs your organisation in the UAE needs an Enterprise Architecture reset.",
     date: "Jan 28, 2026",
     tag: "Enterprise",
+    color: "hsl(0, 70%, 50%)",
     content: `Enterprise Architecture doesn't usually fail overnight. It erodes slowly.
 
 A few exceptions are made "just this once". A system is integrated quickly without following any pattern. A critical initiative is rushed to meet a deadline, bypassing architecture reviews.
@@ -181,6 +185,7 @@ Questions like "Where exactly is customer X's data stored?" or "Which systems ar
     excerpt: "Banks and fintechs in the UAE rely on complex integrations. Learn key principles for sustainable API and integration architecture.",
     date: "Jan 20, 2026",
     tag: "Integration",
+    color: "hsl(45, 85%, 50%)",
     content: `Banks and fintechs in the UAE sit on top of some of the most complex integration landscapes in the region. Core banking systems, digital channels, payment gateways, KYC providers, risk engines, regulatory reporting, partner platforms – all connected by dozens or hundreds of interfaces built over many years.
 
 ## The integration reality in banks and fintechs
@@ -230,6 +235,7 @@ At scale, point-to-point creates hidden complexity: the N² problem, tight coupl
     excerpt: "Before launching AI pilots in Dubai, check whether your architecture is ready. Learn what needs to be in place first.",
     date: "Jan 12, 2026",
     tag: "AI & Cloud",
+    color: "hsl(120, 60%, 50%)",
     content: `AI is on every agenda in Dubai – from government strategies to boardroom conversations. Many organisations are under pressure to "do something with AI": launch a pilot, build a chatbot, apply machine learning to some data.
 
 The risk: jumping into AI initiatives without an architecture that can actually support them.
