@@ -1,26 +1,7 @@
 import { ArrowRight, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
-
-const posts = [
-  {
-    title: "Why Enterprise Architecture Matters in 2026",
-    excerpt: "How structured architecture decisions prevent costly rework and accelerate digital transformation across DACH enterprises.",
-    date: "Feb 3, 2026",
-    tag: "Enterprise",
-  },
-  {
-    title: "AI-Ready Infrastructure: A Pragmatic Guide",
-    excerpt: "Moving beyond buzzwords — concrete steps to prepare your IT landscape for meaningful AI integration.",
-    date: "Jan 22, 2026",
-    tag: "AI & Cloud",
-  },
-  {
-    title: "Integration Patterns for the Modern Enterprise",
-    excerpt: "Event-driven, API-first or hybrid? Choosing the right integration strategy for your organization.",
-    date: "Jan 10, 2026",
-    tag: "Integration",
-  },
-];
+import { Link } from "react-router-dom";
+import { blogPosts } from "@/data/blogPosts";
 
 const BlogSection = () => {
   return (
@@ -46,18 +27,16 @@ const BlogSection = () => {
         </motion.p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post, i) => (
+          {blogPosts.map((post, i) => (
             <motion.article
-              key={post.title}
+              key={post.slug}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group flex flex-col rounded-lg border border-border bg-card overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              {/* Color bar */}
               <div className="h-1.5 bg-accent" />
-
               <div className="flex flex-col flex-1 p-6">
                 <span className="inline-block self-start rounded-full bg-accent/10 px-3 py-0.5 text-xs font-medium text-accent mb-3">
                   {post.tag}
@@ -73,16 +52,25 @@ const BlogSection = () => {
                     <Calendar className="h-3 w-3" />
                     {post.date}
                   </span>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/blog/${post.slug}`}
                     className="flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
                   >
                     Read <ArrowRight className="h-3.5 w-3.5" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.article>
           ))}
+        </div>
+
+        <div className="text-center mt-8">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-accent font-semibold hover:underline"
+          >
+            Alle Beiträge ansehen <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
