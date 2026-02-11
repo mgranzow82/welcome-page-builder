@@ -1,13 +1,16 @@
 import { ArrowRight, Map, Search } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
-const packages = [
-  { icon: Map, title: "Target Architecture & Roadmap", description: "From a structured target architecture to an actionable roadmap", cta: "View Offering", href: "/packages" },
-  { icon: Search, title: "Digital & AI Clarity Check", description: "Get an honest status, clear overview, and concrete next steps in days", cta: "View Offering", href: "/packages" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PackagesSection = () => {
+  const { t } = useLanguage();
+
+  const packages = [
+    { icon: Map, title: t("packages.target.title"), description: t("packages.target.desc"), cta: t("packages.cta"), href: "/packages" },
+    { icon: Search, title: t("packages.clarity.title"), description: t("packages.clarity.desc"), cta: t("packages.cta"), href: "/packages" },
+  ];
+
   return (
     <section id="packages" className="py-12 px-6 lg:px-16 bg-muted/50">
       <div className="mx-auto max-w-5xl text-center">
@@ -18,7 +21,7 @@ const PackagesSection = () => {
           transition={{ duration: 0.6 }}
           className="font-display text-3xl lg:text-4xl text-foreground mb-4"
         >
-          Target architectures in clear packages
+          {t("packages.title")}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 15 }}
@@ -27,7 +30,7 @@ const PackagesSection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-muted-foreground max-w-2xl mx-auto mb-10 text-lg"
         >
-          We provide architecture projects that align business and IT – no subscriptions, no buzzwords.
+          {t("packages.subtitle")}
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-6">
