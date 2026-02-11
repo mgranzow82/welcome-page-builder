@@ -5,9 +5,11 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { blogPosts } from "@/data/blogPosts";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
 const Blog = () => {
   const { t } = useLanguage();
+  useDocumentMeta({ title: t("seo.blog.title"), description: t("seo.blog.description") });
 
   return (
     <div className="min-h-screen">

@@ -1,10 +1,12 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
 const NotFound = () => {
   const location = useLocation();
   const { t } = useLanguage();
+  useDocumentMeta({ title: t("seo.notfound.title"), description: t("seo.notfound.description") });
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);

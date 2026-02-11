@@ -5,9 +5,11 @@ import heroBg from "@/assets/hero-bg.jpg";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
 const PackagesPage = () => {
   const { t } = useLanguage();
+  useDocumentMeta({ title: t("seo.packages.title"), description: t("seo.packages.description") });
 
   const features = [
     { icon: Map, title: t("pkg.feat1.title"), description: t("pkg.feat1.desc") },

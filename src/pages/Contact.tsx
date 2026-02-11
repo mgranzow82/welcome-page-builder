@@ -6,9 +6,11 @@ import heroBg from "@/assets/hero-bg.jpg";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
 const Contact = () => {
   const { t } = useLanguage();
+  useDocumentMeta({ title: t("seo.contact.title"), description: t("seo.contact.description") });
   const [searchParams] = useSearchParams();
   const initialSubject = searchParams.get("subject") || "";
   const [form, setForm] = useState({ name: "", email: "", subject: initialSubject, message: "" });
