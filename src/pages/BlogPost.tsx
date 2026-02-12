@@ -80,15 +80,6 @@ const BlogPost = () => {
       <section className="bg-hero text-hero-foreground pt-28 pb-16 px-6 lg:px-16">
         <Navbar />
         <div className="mx-auto max-w-3xl">
-          <div className="mb-6">
-            <Breadcrumbs
-              variant="light"
-              items={[
-                { label: t("breadcrumb.blog"), href: "/blog" },
-                { label: t(post.titleKey) },
-              ]}
-            />
-          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,6 +99,18 @@ const BlogPost = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+      <div className="bg-muted/50 border-b border-border px-6 lg:px-16 py-3">
+        <div className="mx-auto max-w-3xl">
+          <Breadcrumbs
+            items={[
+              { label: t("breadcrumb.blog"), href: "/blog" },
+              { label: t(post.titleKey) },
+            ]}
+          />
+        </div>
+      </div>
 
       {/* Content */}
       <article className="py-14 px-6 lg:px-16">
