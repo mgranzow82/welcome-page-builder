@@ -1,3 +1,5 @@
+import { getTagColor } from "./categoryColors";
+
 export interface BlogPost {
   slug: string;
   titleKey: string;
@@ -5,6 +7,7 @@ export interface BlogPost {
   contentKey: string;
   date: string;
   tag: string;
+  /** @deprecated Use getTagColor(post.tag) instead for consistent colors */
   color: string;
   // Keep these for fallback / non-translated contexts
   title: string;

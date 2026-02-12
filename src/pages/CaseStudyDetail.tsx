@@ -8,6 +8,7 @@ import RelatedContent from "@/components/RelatedContent";
 import ContextualCTA from "@/components/ContextualCTA";
 import ArchitectureDiagram, { ingDiagram, tuevDiagram, dbDiagram, merkurDiagram } from "@/components/ArchitectureDiagram";
 import { caseStudies } from "@/data/caseStudies";
+import { getIndustryColor } from "@/data/categoryColors";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
@@ -54,9 +55,9 @@ const CaseStudyDetail = () => {
             <div className="flex items-center gap-3 mb-4">
               <div
                 className="flex items-center justify-center w-10 h-10 rounded-lg"
-                style={{ backgroundColor: cs.color + "30" }}
+                style={{ backgroundColor: getIndustryColor(cs.industry) + "30" }}
               >
-                <Icon className="h-5 w-5" style={{ color: cs.color }} />
+                <Icon className="h-5 w-5" style={{ color: getIndustryColor(cs.industry) }} />
               </div>
               <div className="text-sm text-hero-muted">
                 <span>{t(cs.industryKey)}</span>
@@ -180,7 +181,7 @@ const CaseStudyDetail = () => {
                   <div className="flex items-center gap-2 mb-3">
                     <div
                       className="w-6 h-6 rounded flex items-center justify-center text-xs font-bold"
-                      style={{ backgroundColor: cs.color + "20", color: cs.color }}
+                      style={{ backgroundColor: getIndustryColor(cs.industry) + "20", color: getIndustryColor(cs.industry) }}
                     >
                       {i + 1}
                     </div>

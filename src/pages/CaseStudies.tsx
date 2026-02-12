@@ -6,6 +6,7 @@ import FooterSection from "@/components/FooterSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import heroBg from "@/assets/hero-bg.jpg";
 import { caseStudies } from "@/data/caseStudies";
+import { getIndustryColor } from "@/data/categoryColors";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
@@ -79,16 +80,16 @@ const CaseStudies = () => {
                 className="group relative rounded-lg border border-border bg-card overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
               >
                 {/* Color accent bar */}
-                <div className="h-1.5" style={{ backgroundColor: cs.color }} />
+                <div className="h-1.5" style={{ backgroundColor: getIndustryColor(cs.industry) }} />
 
                 <div className="p-6 lg:p-8">
                   {/* Meta */}
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className="flex items-center justify-center w-10 h-10 rounded-lg"
-                      style={{ backgroundColor: cs.color + "20" }}
+                      style={{ backgroundColor: getIndustryColor(cs.industry) + "20" }}
                     >
-                      <Icon className="h-5 w-5" style={{ color: cs.color }} />
+                      <Icon className="h-5 w-5" style={{ color: getIndustryColor(cs.industry) }} />
                     </div>
                     <div>
                       <span className="text-xs font-medium text-muted-foreground">{t(cs.industryKey)}</span>

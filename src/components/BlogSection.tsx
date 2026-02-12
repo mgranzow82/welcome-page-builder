@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { blogPosts } from "@/data/blogPosts";
+import { getTagColor } from "@/data/categoryColors";
 
 const BlogSection = () => {
   const { t } = useLanguage();
@@ -39,9 +40,9 @@ const BlogSection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group flex flex-col rounded-lg border border-border bg-card overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="h-1.5" style={{ backgroundColor: post.color }} />
+              <div className="h-1.5" style={{ backgroundColor: getTagColor(post.tag) }} />
               <div className="flex flex-col flex-1 p-6">
-                <span className="inline-block self-start rounded-full bg-accent/10 px-3 py-0.5 text-xs font-medium text-accent mb-3">
+                <span className="inline-block self-start rounded-full px-3 py-0.5 text-xs font-medium mb-3" style={{ backgroundColor: getTagColor(post.tag) + "18", color: getTagColor(post.tag) }}>
                   {post.tag}
                 </span>
                 <h3 className="font-display text-lg text-card-foreground mb-2 group-hover:text-accent transition-colors">
