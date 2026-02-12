@@ -1,12 +1,12 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Check, Building2, Shield, Train, Gamepad2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Building2, Shield, Train, Gamepad2, Cloud, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedContent from "@/components/RelatedContent";
 import ContextualCTA from "@/components/ContextualCTA";
-import ArchitectureDiagram, { ingDiagram, tuevDiagram, dbDiagram, merkurDiagram } from "@/components/ArchitectureDiagram";
+import ArchitectureDiagram, { ingDiagram, tuevDiagram, dbDiagram, merkurDiagram, mreDiagram, depotDiagram } from "@/components/ArchitectureDiagram";
 import { caseStudies } from "@/data/caseStudies";
 import { getIndustryColor } from "@/data/categoryColors";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -17,6 +17,8 @@ const iconMap = {
   shield: Shield,
   train: Train,
   gamepad: Gamepad2,
+  cloud: Cloud,
+  shopping: ShoppingBag,
 };
 
 const diagramMap: Record<string, { title: string; nodes: any[]; edges: any[]; height: number }> = {
@@ -24,6 +26,8 @@ const diagramMap: Record<string, { title: string; nodes: any[]; edges: any[]; he
   "tuev-sued-scheduling-platform": tuevDiagram,
   "deutsche-bahn-cloud-transformation": dbDiagram,
   "gauselmann-merkur-gaming-platform": merkurDiagram,
+  "munich-re-iot-ai-cloud": mreDiagram,
+  "depot-scayle-ecommerce": depotDiagram,
 };
 
 const CaseStudyDetail = () => {
