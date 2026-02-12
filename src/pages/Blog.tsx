@@ -17,8 +17,10 @@ const Blog = () => {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Newest first
-  const allPosts = useMemo(() => [...blogPosts].reverse(), []);
+  // Sort by date, newest first
+  const allPosts = useMemo(() => {
+    return [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, []);
 
   const tags = useMemo(() => {
     const unique = Array.from(new Set(allPosts.map((p) => p.tag)));

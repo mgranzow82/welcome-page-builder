@@ -30,7 +30,7 @@ const BlogSection = () => {
         </motion.p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[...blogPosts].reverse().slice(0, 6).map((post, i) => (
+          {[...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6).map((post, i) => (
             <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 30 }}
