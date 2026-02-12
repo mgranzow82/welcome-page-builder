@@ -45,7 +45,7 @@ export const de: Record<string, string> = {
   "services.subtitle": "Von 'Wir wissen, dass sich etwas ändern muss' zu einer klaren Zielarchitektur und Roadmap – schnell, pragmatisch, entscheidungsreif.",
   "services.enterprise.title": "Enterprise Architektur",
   "services.enterprise.desc": "Enterprise-Leadership für Transformationsprogramme mit klaren Zielarchitekturen und Governance.",
-  "services.cloud.title": "Solution & Cloud Architektur",
+  "services.cloud.title": "Solution & Software Architektur",
   "services.cloud.desc": "Solution-Design für Produkte, Plattformen und SaaS – vom High-Level-Design bis zur Implementierungsbegleitung.",
   "services.integration.title": "Integrations- & API-Architektur",
   "services.integration.desc": "API-Strategie, Event-Driven-Architekturen und Integrationsmuster für moderne Unternehmen.",
