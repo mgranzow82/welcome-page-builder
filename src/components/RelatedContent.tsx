@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { blogPosts, BlogPost } from "@/data/blogPosts";
 import { caseStudies, CaseStudy } from "@/data/caseStudies";
+import { getTagColor, getIndustryColor } from "@/data/categoryColors";
 
 // Map blog tags to relevant case study industries
 const tagToCaseStudyMap: Record<string, string[]> = {
@@ -31,17 +32,16 @@ interface RelatedContentProps {
 
 const RelatedContent = ({ type, currentSlug, currentTag, currentIndustry }: RelatedContentProps) => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   let relatedPosts: BlogPost[] = [];
   let relatedCases: CaseStudy[] = [];
 
   if (type === "blog" && currentTag) {
-    // Related blog posts: same tag, different slug
     relatedPosts = blogPosts
       .filter((p) => p.slug !== currentSlug && p.tag === currentTag)
       .slice(0, 2);
 
-    // If not enough, add from other tags
     if (relatedPosts.length < 2) {
       const more = blogPosts
         .filter((p) => p.slug !== currentSlug && p.tag !== currentTag)
@@ -49,7 +49,6 @@ const RelatedContent = ({ type, currentSlug, currentTag, currentIndustry }: Rela
       relatedPosts = [...relatedPosts, ...more];
     }
 
-    // Related case studies based on tag
     const relevantIndustries = tagToCaseStudyMap[currentTag] || [];
     relatedCases = caseStudies
       .filter((cs) => relevantIndustries.includes(cs.industry))
@@ -57,19 +56,29 @@ const RelatedContent = ({ type, currentSlug, currentTag, currentIndustry }: Rela
   }
 
   if (type === "case-study" && currentIndustry) {
-    // Other case studies
     relatedCases = caseStudies
       .filter((cs) => cs.slug !== currentSlug)
       .slice(0, 2);
 
-    // Related blog posts based on industry
     const relevantTags = industryToTagMap[currentIndustry] || [];
     relatedPosts = blogPosts
       .filter((p) => relevantTags.includes(p.tag) && p.contentKey && t(p.contentKey))
       .slice(0, 2);
   }
 
+  // Limit total to max 4
+  const totalItems = relatedPosts.length + relatedCases.length;
+  if (totalItems > 4) {
+    const excessPosts = totalItems - 4;
+    relatedPosts = relatedPosts.slice(0, relatedPosts.length - excessPosts);
+  }
+
   if (relatedPosts.length === 0 && relatedCases.length === 0) return null;
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
 
   return (
     <section className="py-14 px-6 lg:px-16 bg-muted/30 border-t border-border">
@@ -78,7 +87,7 @@ const RelatedContent = ({ type, currentSlug, currentTag, currentIndustry }: Rela
           {t("related.title")}
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           {/* Related Blog Posts */}
           {relatedPosts.map((post, i) => (
             <motion.article
@@ -87,11 +96,15 @@ const RelatedContent = ({ type, currentSlug, currentTag, currentIndustry }: Rela
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group rounded-lg border border-border bg-card overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              onClick={() => handleNavigate(`/blog/${post.slug}`)}
+              className="group cursor-pointer rounded-lg border border-border bg-card overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="h-1" style={{ backgroundColor: post.color }} />
+              <div className="h-1" style={{ backgroundColor: getTagColor(post.tag) }} />
               <div className="p-5">
-                <span className="inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent mb-2">
+                <span
+                  className="inline-block rounded-full px-2.5 py-0.5 text-xs font-medium mb-2"
+                  style={{ backgroundColor: getTagColor(post.tag) + "18", color: getTagColor(post.tag) }}
+                >
                   {post.tag}
                 </span>
                 <h3 className="font-display text-base text-card-foreground mb-2 group-hover:text-accent transition-colors line-clamp-2">
@@ -104,12 +117,9 @@ const RelatedContent = ({ type, currentSlug, currentTag, currentIndustry }: Rela
                   <span className="flex items-center gap-1 text-xs text-muted-foreground">
                     <Calendar className="h-3 w-3" /> {post.date}
                   </span>
-                  <Link
-                    to={`/blog/${post.slug}`}
-                    className="flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
-                  >
+                  <span className="flex items-center gap-1 text-sm font-semibold text-accent">
                     {t("blog.read")} <ArrowRight className="h-3 w-3" />
-                  </Link>
+                  </span>
                 </div>
               </div>
             </motion.article>
@@ -123,11 +133,15 @@ const RelatedContent = ({ type, currentSlug, currentTag, currentIndustry }: Rela
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: (relatedPosts.length + i) * 0.08 }}
-              className="group rounded-lg border border-border bg-card overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              onClick={() => handleNavigate(`/case-studies/${cs.slug}`)}
+              className="group cursor-pointer rounded-lg border border-border bg-card overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="h-1" style={{ backgroundColor: cs.color }} />
+              <div className="h-1" style={{ backgroundColor: getIndustryColor(cs.industry) }} />
               <div className="p-5">
-                <span className="inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent mb-2">
+                <span
+                  className="inline-block rounded-full px-2.5 py-0.5 text-xs font-medium mb-2"
+                  style={{ backgroundColor: getIndustryColor(cs.industry) + "18", color: getIndustryColor(cs.industry) }}
+                >
                   {t(cs.industryKey)}
                 </span>
                 <h3 className="font-display text-base text-card-foreground mb-2 group-hover:text-accent transition-colors line-clamp-2">
@@ -136,12 +150,9 @@ const RelatedContent = ({ type, currentSlug, currentTag, currentIndustry }: Rela
                 <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
                   {t(cs.teaserKey)}
                 </p>
-                <Link
-                  to={`/case-studies/${cs.slug}`}
-                  className="flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
-                >
+                <span className="flex items-center gap-1 text-sm font-semibold text-accent">
                   {t("cases.read_more")} <ArrowRight className="h-3 w-3" />
-                </Link>
+                </span>
               </div>
             </motion.article>
           ))}
