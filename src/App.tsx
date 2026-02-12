@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
+import ServiceConsulting from "./pages/ServiceConsulting";
+import ServiceEnterprise from "./pages/ServiceEnterprise";
+import ServiceSolution from "./pages/ServiceSolution";
+import ServicePrincipal from "./pages/ServicePrincipal";
 import Packages from "./pages/Packages";
 import Contact from "./pages/Contact";
 import Book from "./pages/Book";
@@ -28,6 +32,10 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/architecture-consulting-dubai" element={<ServiceConsulting />} />
+            <Route path="/services/enterprise-architecture-advisory-uae-dubai" element={<ServiceEnterprise />} />
+            <Route path="/services/solution-software-architecture-consulting-dubai" element={<ServiceSolution />} />
+            <Route path="/services/principal-architect-dubai-remote" element={<ServicePrincipal />} />
             <Route path="/packages" element={<Packages />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/book" element={<Book />} />
