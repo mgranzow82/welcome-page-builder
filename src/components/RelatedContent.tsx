@@ -8,11 +8,11 @@ import { getTagColor, getIndustryColor } from "@/data/categoryColors";
 
 // Map blog tags to relevant case study industries
 const tagToCaseStudyMap: Record<string, string[]> = {
-  Enterprise: ["Banking", "TIC", "Rail"],
-  Integration: ["Banking", "Gaming"],
-  "AI & Cloud": ["TIC"],
+  Enterprise: ["Banking", "TIC", "Rail", "Insurance", "Retail"],
+  Integration: ["Banking", "Gaming", "Retail"],
+  "AI & Cloud": ["TIC", "Insurance"],
   Roadmap: ["Rail", "Banking"],
-  "Solution Architecture": ["Gaming", "TIC"],
+  "Solution Architecture": ["Gaming", "TIC", "Retail"],
 };
 
 // Map case study industries to relevant blog tags
@@ -21,6 +21,8 @@ const industryToTagMap: Record<string, string[]> = {
   TIC: ["Enterprise", "AI & Cloud"],
   Rail: ["Enterprise", "Roadmap"],
   Gaming: ["Integration", "Solution Architecture"],
+  Insurance: ["AI & Cloud", "Enterprise"],
+  Retail: ["Integration", "Solution Architecture"],
 };
 
 interface RelatedContentProps {

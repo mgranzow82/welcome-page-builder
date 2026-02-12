@@ -204,3 +204,47 @@ export const merkurDiagram = {
   ],
   height: 140,
 };
+
+export const mreDiagram = {
+  title: "Cloud Architecture – IoT & AI Insurance Platform (AWS)",
+  nodes: [
+    { label: "IoT Devices", x: 10, y: 10, size: "md" as const, color: "hsl(200,65%,50%)" },
+    { label: "Data Ingestion", x: 150, y: 10, size: "md" as const, color: "hsl(170,50%,45%)" },
+    { label: "Data Lake (S3)", x: 290, y: 10, size: "lg" as const, color: "hsl(30,70%,50%)" },
+    { label: "AI/ML Services", x: 440, y: 10, size: "md" as const, color: "hsl(270,55%,55%)" },
+    { label: "Processing", x: 150, y: 80, size: "md" as const, color: "hsl(15,80%,55%)" },
+    { label: "Analytics", x: 290, y: 80, size: "md" as const, color: "hsl(210,70%,50%)" },
+    { label: "API Layer", x: 440, y: 80, size: "md" as const, color: "hsl(170,50%,45%)" },
+  ],
+  edges: [
+    { from: 0, to: 1, label: "Stream" },
+    { from: 1, to: 2 },
+    { from: 2, to: 3, label: "ML Pipeline" },
+    { from: 1, to: 4, dashed: true },
+    { from: 4, to: 5 },
+    { from: 3, to: 6, label: "Results" },
+  ],
+  height: 140,
+};
+
+export const depotDiagram = {
+  title: "Architecture – Headless E-Commerce Platform (SCAYLE / AWS)",
+  nodes: [
+    { label: "Web / Mobile", x: 10, y: 10, size: "md" as const, color: "hsl(330,65%,50%)" },
+    { label: "GraphQL/REST", x: 150, y: 10, size: "md" as const, color: "hsl(170,50%,45%)" },
+    { label: "SCAYLE Core", x: 290, y: 10, size: "lg" as const, color: "hsl(200,60%,50%)" },
+    { label: "SAP / ERP", x: 440, y: 10, size: "md" as const, color: "hsl(15,80%,55%)" },
+    { label: "Middleware", x: 150, y: 80, size: "md" as const, color: "hsl(45,60%,50%)" },
+    { label: "SQS / SNS", x: 290, y: 80, size: "md" as const, color: "hsl(30,70%,50%)" },
+    { label: "Monitoring", x: 440, y: 80, size: "md" as const, color: "hsl(260,40%,55%)" },
+  ],
+  edges: [
+    { from: 0, to: 1 },
+    { from: 1, to: 2, label: "API" },
+    { from: 2, to: 3, label: "Integration" },
+    { from: 1, to: 4 },
+    { from: 4, to: 5, label: "Async" },
+    { from: 2, to: 6, dashed: true, label: "Metrics" },
+  ],
+  height: 140,
+};

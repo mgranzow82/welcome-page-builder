@@ -16,6 +16,8 @@ export const industryColors: Record<string, string> = {
   TIC: "hsl(210, 70%, 50%)",
   Rail: "hsl(0, 70%, 50%)",
   Gaming: "hsl(45, 85%, 50%)",
+  Insurance: "hsl(200, 65%, 50%)",
+  Retail: "hsl(330, 65%, 50%)",
 };
 
 export function getTagColor(tag: string): string {

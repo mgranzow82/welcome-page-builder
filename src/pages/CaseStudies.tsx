@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Building2, Shield, Train, Gamepad2 } from "lucide-react";
+import { ArrowRight, Building2, Shield, Train, Gamepad2, Cloud, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
@@ -15,6 +15,8 @@ const iconMap = {
   shield: Shield,
   train: Train,
   gamepad: Gamepad2,
+  cloud: Cloud,
+  shopping: ShoppingBag,
 };
 
 const CaseStudies = () => {

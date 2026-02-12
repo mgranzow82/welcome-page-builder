@@ -17,7 +17,7 @@ export interface CaseStudy {
   }[];
   outcomeKeys: string[];
   color: string;
-  icon: "building" | "shield" | "train" | "gamepad";
+  icon: "building" | "shield" | "train" | "gamepad" | "cloud" | "shopping";
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -109,5 +109,53 @@ export const caseStudies: CaseStudy[] = [
     outcomeKeys: ["cs.merkur.out1", "cs.merkur.out2", "cs.merkur.out3"],
     color: "hsl(45, 85%, 50%)",
     icon: "gamepad",
+  },
+  {
+    slug: "munich-re-iot-ai-cloud",
+    titleKey: "cs.mre.title",
+    teaserKey: "cs.mre.teaser",
+    industry: "Insurance",
+    industryKey: "cs.mre.industry",
+    region: "Global (HQ Germany)",
+    regionKey: "cs.mre.region",
+    offeringKey: "cs.mre.offering",
+    roleKey: "cs.mre.role",
+    summaryKey: "cs.mre.summary",
+    startingPointKeys: ["cs.mre.start1", "cs.mre.start2", "cs.mre.start3"],
+    objectiveKeys: ["cs.mre.obj1", "cs.mre.obj2", "cs.mre.obj3"],
+    approachSections: [
+      { titleKey: "cs.mre.app1.title", itemKeys: ["cs.mre.app1.i1", "cs.mre.app1.i2"] },
+      { titleKey: "cs.mre.app2.title", itemKeys: ["cs.mre.app2.i1", "cs.mre.app2.i2"] },
+      { titleKey: "cs.mre.app3.title", itemKeys: ["cs.mre.app3.i1", "cs.mre.app3.i2"] },
+      { titleKey: "cs.mre.app4.title", itemKeys: ["cs.mre.app4.i1"] },
+    ],
+    outcomeKeys: ["cs.mre.out1", "cs.mre.out2", "cs.mre.out3"],
+    color: "hsl(200, 65%, 50%)",
+    icon: "cloud",
+  },
+  {
+    slug: "depot-scayle-ecommerce",
+    titleKey: "cs.depot.title",
+    teaserKey: "cs.depot.teaser",
+    industry: "Retail",
+    industryKey: "cs.depot.industry",
+    region: "Germany, Austria, Eastern Europe",
+    regionKey: "cs.depot.region",
+    offeringKey: "cs.depot.offering",
+    roleKey: "cs.depot.role",
+    summaryKey: "cs.depot.summary",
+    startingPointKeys: ["cs.depot.start1", "cs.depot.start2", "cs.depot.start3"],
+    objectiveKeys: ["cs.depot.obj1", "cs.depot.obj2", "cs.depot.obj3"],
+    approachSections: [
+      { titleKey: "cs.depot.app1.title", itemKeys: ["cs.depot.app1.i1", "cs.depot.app1.i2"] },
+      { titleKey: "cs.depot.app2.title", itemKeys: ["cs.depot.app2.i1", "cs.depot.app2.i2"] },
+      { titleKey: "cs.depot.app3.title", itemKeys: ["cs.depot.app3.i1", "cs.depot.app3.i2"] },
+      { titleKey: "cs.depot.app4.title", itemKeys: ["cs.depot.app4.i1", "cs.depot.app4.i2"] },
+      { titleKey: "cs.depot.app5.title", itemKeys: ["cs.depot.app5.i1", "cs.depot.app5.i2"] },
+      { titleKey: "cs.depot.app6.title", itemKeys: ["cs.depot.app6.i1", "cs.depot.app6.i2"] },
+    ],
+    outcomeKeys: ["cs.depot.out1", "cs.depot.out2", "cs.depot.out3"],
+    color: "hsl(330, 65%, 50%)",
+    icon: "shopping",
   },
 ];
