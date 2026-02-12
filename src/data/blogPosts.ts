@@ -282,4 +282,16 @@ Rather than sprinkling AI into existing boxes, model AI as a capability: "Custom
 
 **Next steps:** If you're under pressure to "do something with AI", taking a short pause to assess your architectural readiness is not a delay – it's risk management. At DA·AI, we often start with a Digital & AI Clarity Check that gives you a management-ready view and a 90-day roadmap towards AI readiness.`,
   },
+  {
+    slug: "solution-software-architecture-digital-platforms-dubai-uae",
+    titleKey: "blog.post6.title",
+    excerptKey: "blog.post6.excerpt",
+    contentKey: "blog.post6.content",
+    title: "Solution & Software Architecture for Digital Platforms in Dubai and the UAE",
+    excerpt: "Solution & software architecture consulting for digital platforms in Dubai and the UAE. Learn how to design systems that scale without losing control.",
+    date: "Feb 12, 2026",
+    tag: "Solution Architecture",
+    color: "hsl(270, 65%, 55%)",
+    content: "",
+  },
 ];
