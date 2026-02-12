@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
+import SiteSearch from "@/components/SiteSearch";
 import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
@@ -92,6 +93,8 @@ const Navbar = () => {
             {item.label}
           </Link>
         ))}
+
+        <SiteSearch />
 
         <div className="relative">
           <button
