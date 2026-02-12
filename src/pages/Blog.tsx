@@ -50,9 +50,6 @@ const Blog = () => {
       <section className="bg-hero text-hero-foreground pt-28 pb-16 px-6 lg:px-16">
         <div className="mx-auto max-w-4xl text-center">
           <Navbar />
-          <div className="mb-6 flex justify-center">
-            <Breadcrumbs variant="light" items={[{ label: t("breadcrumb.blog") }]} />
-          </div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,6 +68,13 @@ const Blog = () => {
           </motion.p>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+      <div className="bg-muted/50 border-b border-border px-6 lg:px-16 py-3">
+        <div className="mx-auto max-w-5xl">
+          <Breadcrumbs items={[{ label: t("breadcrumb.blog") }]} />
+        </div>
+      </div>
 
       {/* Filter & Post listing */}
       <section className="py-16 px-6 lg:px-16 bg-background">

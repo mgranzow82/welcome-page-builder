@@ -73,9 +73,6 @@ const Services = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-hero/90 via-hero/70 to-hero/40" />
         </div>
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-16 pt-28 pb-12">
-          <div className="mb-6">
-            <Breadcrumbs variant="light" items={[{ label: t("breadcrumb.services") }]} />
-          </div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,6 +125,13 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+      <div className="bg-muted/50 border-b border-border px-6 lg:px-16 py-3">
+        <div className="mx-auto max-w-7xl">
+          <Breadcrumbs items={[{ label: t("breadcrumb.services") }]} />
+        </div>
+      </div>
 
       {/* Why Architecture */}
       <section className="py-12 px-6 lg:px-16 bg-background">

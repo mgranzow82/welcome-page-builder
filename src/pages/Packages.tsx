@@ -58,9 +58,6 @@ const PackagesPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-hero/95 via-hero/80 to-hero/50" />
         </div>
         <div className="relative z-10 mx-auto w-full max-w-5xl px-6 lg:px-16 pt-24 pb-12 text-center">
-          <div className="mb-6 flex justify-center">
-            <Breadcrumbs variant="light" items={[{ label: t("breadcrumb.packages") }]} />
-          </div>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,6 +84,13 @@ const PackagesPage = () => {
           </motion.p>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+      <div className="bg-muted/50 border-b border-border px-6 lg:px-16 py-3">
+        <div className="mx-auto max-w-5xl">
+          <Breadcrumbs items={[{ label: t("breadcrumb.packages") }]} />
+        </div>
+      </div>
 
       {/* For Whom & What You Get */}
       <section className="py-12 px-6 lg:px-16 bg-background">
