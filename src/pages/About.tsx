@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import heroBg from "@/assets/hero-bg.jpg";
+import marcusPortrait from "@/assets/marcus-portrait.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
 
@@ -96,37 +97,56 @@ const About = () => {
 
       {/* 2. Wer wir sind */}
       <section className="py-12 px-6 lg:px-16 bg-background">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-7xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6 }}
-            className="font-display text-3xl lg:text-4xl text-foreground mb-4"
+            className="font-display text-3xl lg:text-4xl text-foreground mb-8"
           >
             {t("about.who.title")}
           </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-4 text-muted-foreground leading-relaxed"
-          >
-            <p dangerouslySetInnerHTML={{ __html: t("about.who.p1") }} />
-            <p dangerouslySetInnerHTML={{ __html: t("about.who.p2") }} />
-            <ul className="space-y-2 pl-1">
-              {whoItems.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm">
-                  <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="font-medium text-foreground">
-              {t("about.who.mission")}
-            </p>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="space-y-4 text-muted-foreground leading-relaxed"
+            >
+              <p dangerouslySetInnerHTML={{ __html: t("about.who.p1") }} />
+              <p dangerouslySetInnerHTML={{ __html: t("about.who.p2") }} />
+              <ul className="space-y-2 pl-1">
+                {whoItems.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm">
+                    <Check className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="font-medium text-foreground">
+                {t("about.who.mission")}
+              </p>
+            </motion.div>
+
+            {/* Portrait Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex justify-center lg:justify-end"
+            >
+              <img
+                src={marcusPortrait}
+                alt="Marcus Granzow, Solution Architect & Technology Leader"
+                className="rounded-lg shadow-lg max-w-sm w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
