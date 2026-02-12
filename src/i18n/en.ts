@@ -68,6 +68,8 @@ export const en: Record<string, string> = {
   "blog.subtitle": "Practical thinking on architecture, AI, and digital transformation.",
   "blog.read": "Read",
   "blog.all_posts": "View all posts",
+  "blog.filter_all": "All",
+  "blog.no_posts": "No posts found in this category.",
 
   // CTA Section
   "cta.title": "Start with a 30-minute consultation",
