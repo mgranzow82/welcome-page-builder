@@ -4,6 +4,7 @@ import { ArrowRight, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogPosts } from "@/data/blogPosts";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
@@ -49,6 +50,9 @@ const Blog = () => {
       <section className="bg-hero text-hero-foreground pt-28 pb-16 px-6 lg:px-16">
         <div className="mx-auto max-w-4xl text-center">
           <Navbar />
+          <div className="mb-6 flex justify-center">
+            <Breadcrumbs variant="light" items={[{ label: t("breadcrumb.blog") }]} />
+          </div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

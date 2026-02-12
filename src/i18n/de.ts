@@ -726,4 +726,30 @@ Starke Solution & Software Architecture bedeutet nicht, Dinge zu verlangsamen. E
   "cs.merkur.out1": "Eine skalierbare, hochperformante Plattform für internationalen Rollout in mehreren Ländern.",
   "cs.merkur.out2": "Reduzierte Abhängigkeit vom ursprünglichen Monolith mit klarerer Trennung durch Microservices.",
   "cs.merkur.out3": "Eine reifere technische Organisation mit besserem Alignment zwischen Architektur, Teams und Business-Roadmap.",
+
+  // Breadcrumbs
+  "breadcrumb.home": "Startseite",
+  "breadcrumb.services": "Leistungen",
+  "breadcrumb.packages": "Angebote",
+  "breadcrumb.blog": "Blog",
+  "breadcrumb.cases": "Case Studies",
+  "breadcrumb.about": "Über uns",
+  "breadcrumb.contact": "Kontakt",
+  "breadcrumb.book": "Termin buchen",
+
+  // Related Content
+  "related.title": "Das könnte Sie auch interessieren",
+
+  // Contextual Cross-Links
+  "crosslink.heading": "Architektur-Unterstützung gesucht?",
+  "crosslink.text.blog": "Erfahren Sie, wie unsere Architektur-Leistungen und Pakete Ihre Organisation von der Erkenntnis zum Handeln bringen.",
+  "crosslink.text.case": "Entdecken Sie unser gesamtes Leistungsspektrum – von Enterprise-Strategie bis hands-on Solution Design.",
+  "crosslink.cta.services": "Leistungen ansehen",
+  "crosslink.cta.packages": "Angebote ansehen",
+  "crosslink.cta.book": "Termin buchen",
+
+  // Services page cross-links
+  "svc.cases.title": "Unsere Arbeit in der Praxis",
+  "svc.cases.text": "Erfahren Sie, wie wir Architektur-Ergebnisse für Organisationen in Banking, Bahn, Zertifizierung und Gaming geliefert haben.",
+  "svc.cases.cta": "Case Studies ansehen",
 };

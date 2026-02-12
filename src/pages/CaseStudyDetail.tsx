@@ -3,6 +3,9 @@ import { ArrowLeft, ArrowRight, Check, Building2, Shield, Train, Gamepad2 } from
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedContent from "@/components/RelatedContent";
+import ContextualCTA from "@/components/ContextualCTA";
 import ArchitectureDiagram, { ingDiagram, tuevDiagram, dbDiagram, merkurDiagram } from "@/components/ArchitectureDiagram";
 import { caseStudies } from "@/data/caseStudies";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -43,12 +46,15 @@ const CaseStudyDetail = () => {
       <section className="bg-hero text-hero-foreground pt-28 pb-16 px-6 lg:px-16">
         <Navbar />
         <div className="mx-auto max-w-4xl">
-          <Link
-            to="/case-studies"
-            className="inline-flex items-center gap-1.5 text-hero-muted hover:text-hero-foreground text-sm mb-6 transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" /> {t("cases.back")}
-          </Link>
+          <div className="mb-6">
+            <Breadcrumbs
+              variant="light"
+              items={[
+                { label: t("breadcrumb.cases"), href: "/case-studies" },
+                { label: t(cs.titleKey) },
+              ]}
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -209,6 +215,9 @@ const CaseStudyDetail = () => {
             </ul>
           </motion.div>
 
+          {/* Contextual CTA */}
+          <ContextualCTA type="case-study" />
+
           {/* Back + CTA */}
           <div className="flex flex-wrap items-center justify-between gap-4">
             <Link
@@ -226,6 +235,9 @@ const CaseStudyDetail = () => {
           </div>
         </div>
       </article>
+
+      {/* Related Content */}
+      <RelatedContent type="case-study" currentSlug={cs.slug} currentIndustry={cs.industry} />
 
       <FooterSection />
     </div>

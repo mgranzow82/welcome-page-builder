@@ -3,6 +3,7 @@ import { ArrowRight, Building2, Shield, Train, Gamepad2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import heroBg from "@/assets/hero-bg.jpg";
 import { caseStudies } from "@/data/caseStudies";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -30,6 +31,9 @@ const CaseStudies = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-hero/95 via-hero/80 to-hero/50" />
         </div>
         <div className="relative z-10 mx-auto w-full max-w-5xl px-6 lg:px-16 pt-24 pb-12 text-center">
+          <div className="mb-6 flex justify-center">
+            <Breadcrumbs variant="light" items={[{ label: t("breadcrumb.cases") }]} />
+          </div>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

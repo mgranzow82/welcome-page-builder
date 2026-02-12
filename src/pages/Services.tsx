@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import heroBg from "@/assets/hero-bg.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
@@ -72,6 +73,9 @@ const Services = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-hero/90 via-hero/70 to-hero/40" />
         </div>
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-16 pt-28 pb-12">
+          <div className="mb-6">
+            <Breadcrumbs variant="light" items={[{ label: t("breadcrumb.services") }]} />
+          </div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -262,6 +266,36 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Case Studies Cross-Link */}
+      <section className="py-12 px-6 lg:px-16 bg-background border-t border-border">
+        <div className="mx-auto max-w-5xl text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+            className="font-display text-2xl text-foreground mb-3"
+          >
+            {t("svc.cases.title")}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto"
+          >
+            {t("svc.cases.text")}
+          </motion.p>
+          <Link
+            to="/case-studies"
+            className="inline-flex items-center gap-2 rounded bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            {t("svc.cases.cta")} <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
