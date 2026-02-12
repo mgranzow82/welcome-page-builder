@@ -3,6 +3,9 @@ import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedContent from "@/components/RelatedContent";
+import ContextualCTA from "@/components/ContextualCTA";
 import { blogPosts } from "@/data/blogPosts";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useDocumentMeta } from "@/hooks/useDocumentMeta";
@@ -77,12 +80,15 @@ const BlogPost = () => {
       <section className="bg-hero text-hero-foreground pt-28 pb-16 px-6 lg:px-16">
         <Navbar />
         <div className="mx-auto max-w-3xl">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-1.5 text-hero-muted hover:text-hero-foreground text-sm mb-6 transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" /> {t("blog.back")}
-          </Link>
+          <div className="mb-6">
+            <Breadcrumbs
+              variant="light"
+              items={[
+                { label: t("breadcrumb.blog"), href: "/blog" },
+                { label: t(post.titleKey) },
+              ]}
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,6 +121,9 @@ const BlogPost = () => {
         </motion.div>
       </article>
 
+      {/* Contextual CTA */}
+      <ContextualCTA tag={post.tag} type="blog" />
+
       {/* Back link */}
       <div className="px-6 lg:px-16 pb-14">
         <div className="mx-auto max-w-3xl">
@@ -126,6 +135,9 @@ const BlogPost = () => {
           </Link>
         </div>
       </div>
+
+      {/* Related Content */}
+      <RelatedContent type="blog" currentSlug={post.slug} currentTag={post.tag} />
 
       <FooterSection />
     </div>

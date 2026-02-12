@@ -780,4 +780,30 @@ Strong solution & software architecture is not about slowing things down. It's a
   "cs.merkur.out1": "A scalable, high-performance platform supporting international rollouts in multiple countries.",
   "cs.merkur.out2": "Reduced dependency on the original monolith with clearer separation of concerns via microservices.",
   "cs.merkur.out3": "A more mature technical organisation with better alignment between architecture, teams and business roadmap.",
+
+  // Breadcrumbs
+  "breadcrumb.home": "Home",
+  "breadcrumb.services": "Services",
+  "breadcrumb.packages": "Packages",
+  "breadcrumb.blog": "Blog",
+  "breadcrumb.cases": "Case Studies",
+  "breadcrumb.about": "About",
+  "breadcrumb.contact": "Contact",
+  "breadcrumb.book": "Book a Call",
+
+  // Related Content
+  "related.title": "You might also find this interesting",
+
+  // Contextual Cross-Links
+  "crosslink.heading": "Looking for architecture support?",
+  "crosslink.text.blog": "Learn how our architecture services and packages can help your organisation move from insight to action.",
+  "crosslink.text.case": "Explore our full range of architecture services – from enterprise strategy to hands-on solution design.",
+  "crosslink.cta.services": "View Services",
+  "crosslink.cta.packages": "View Packages",
+  "crosslink.cta.book": "Book a Call",
+
+  // Services page cross-links
+  "svc.cases.title": "See Our Work in Practice",
+  "svc.cases.text": "Explore how we've delivered architecture outcomes for organisations in banking, rail, certification and gaming.",
+  "svc.cases.cta": "View Case Studies",
 };
