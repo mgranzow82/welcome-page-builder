@@ -37,7 +37,7 @@ export const en: Record<string, string> = {
   "hero.bullet_2": "Microservices, cloud & integration architecture",
   "hero.bullet_3": "Governance, capability maps & roadmaps",
   "hero.cta_packages": "Explore Packages",
-  "hero.cta_talk": "Talk to Your Principal Architect",
+  "hero.cta_talk": "Talk to Your Architect",
   "hero.location": "Based in Hamburg & Dubai — Remote & on-site for DACH & UAE",
 
   // Services Section (homepage)

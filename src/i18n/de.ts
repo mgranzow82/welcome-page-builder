@@ -37,7 +37,7 @@ export const de: Record<string, string> = {
   "hero.bullet_2": "Microservices, Cloud- & Integrationsarchitektur",
   "hero.bullet_3": "Governance, Capability Maps & Roadmaps",
   "hero.cta_packages": "Angebote ansehen",
-  "hero.cta_talk": "Mit Principal Architect sprechen",
+  "hero.cta_talk": "Mit Ihrem Architect sprechen",
   "hero.location": "Standort Hamburg & Dubai — Remote & vor Ort für DACH & UAE",
 
   // Services Section (homepage)
