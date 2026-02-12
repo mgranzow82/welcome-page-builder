@@ -8,7 +8,7 @@ const CTASection = () => {
   return (
     <section id="contact" className="relative py-12 px-6 lg:px-16 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="h-full w-full object-cover" />
+        <img src={heroBg} alt="" className="h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-hero/85" />
       </div>
       <div className="relative z-10 mx-auto max-w-3xl text-center">
